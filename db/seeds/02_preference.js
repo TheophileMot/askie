@@ -1,14 +1,17 @@
+const faker = require("faker");
 
 exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
-  return knex('preference').del()
+  return Promise.all([
+    knex.raw("ALTER SEQUENCE preference_id_seq RESTART WITH 1"),
+    knex('preference')
+    .del()
     .then(function () {
-      return Promise.all([
-        // Inserts seed entries
-        knex('preference').insert({rank: '1'}),
-        knex('preference').insert({rank: '4'}),
-        knex('preference').insert({rank: '5'}),
-        knex('preference').insert({rank: '6'})
+      return knex('preference').insert([
+          { rank: faker.random.number() },
+          { rank: faker.random.number() },
+          { rank: faker.random.number() },
+          { rank: faker.random.number() },
       ]);
-    });
+    })
+  ]);
 };

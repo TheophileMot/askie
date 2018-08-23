@@ -2,8 +2,8 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('preference', function(table) {
 
     table.increments('id').primary();
-    table.integer('vote_id');
-    table.integer('option_id');
+    // table.integer('vote_id');
+    // table.integer('option_id');
     table.integer('rank');
 
     table
