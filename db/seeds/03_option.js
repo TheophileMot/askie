@@ -8,11 +8,11 @@ exports.seed = function(knex, Promise) {
     .del()
     .then(function () {
       return knex('option').insert([
-        { poll_id: 1, name: faker.lorem.words() },
-        { poll_id: 1, name: faker.lorem.words() },
-        { poll_id: 1, name: faker.lorem.words() },
-        { poll_id: 1, name: faker.lorem.words() },
-        { poll_id: 1, name: faker.lorem.words() }
+        { poll_id: 1, name: faker.lorem.words()},
+        { poll_id: 1, name: faker.lorem.words()},
+        { poll_id: 1, name: faker.lorem.words()},
+        { poll_id: 1, name: faker.lorem.words()},
+        { poll_id: 1, name: faker.lorem.words()}
       ]);
     })
   ]);

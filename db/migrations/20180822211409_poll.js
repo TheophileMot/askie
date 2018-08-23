@@ -12,7 +12,7 @@ exports.up = function(knex, Promise) {
 
     table.string('results_url');
 
-    table.timestamp();
+    table.timestamps();
 
   });
 };

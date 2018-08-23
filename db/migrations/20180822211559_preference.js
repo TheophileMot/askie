@@ -1,22 +1,22 @@
 // jshint esversion: 6
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('option', function(table) {
+  return knex.schema.createTable('preference', table => {
 
     table.increments('id').primary();
-    table.string('name');
-    table.integer('preference_id');
-    table.integer('poll_id');
+    table.integer('vote_id');
+    table.integer('option_id');
+    table.integer('rank');
 
     table
-    .foreign("preference_id")
+    .foreign("vote_id")
     .references("id")
-    .on("preference")
+    .on("vote")
     .onDelete("cascade");
 
     table
-    .foreign("poll_id")
+    .foreign("option_id")
     .references("id")
-    .on("poll")
+    .on("option")
     .onDelete("cascade");
 
   });
