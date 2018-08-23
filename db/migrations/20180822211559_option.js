@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
 
     table.increments('id').primary();
     table.string('name');
-    table.integer('poll_id');
+    // table.integer('poll_id');
 
     table
     .foreign("poll_id")

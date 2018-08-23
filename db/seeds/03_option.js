@@ -1,13 +1,20 @@
+const faker = require("faker");
+
 exports.seed = function(knex, Promise) {
-  return knex('option').del()
+  return Promise.all([
+    knex.raw("ALTER SEQUENCE option_id_seq RESTART WITH 1"),
+    knex('option')
+    .del()
     .then(function () {
-      return Promise.all([
-        knex('option').insert({
-          name: 'Yes'
-        }),
-        knex('option').insert({
-          name: 'No'
-        })
+      return knex('option').insert([
+        { name: faker.lorem.words() },
+        { name: faker.lorem.words() },
+        { name: faker.lorem.words() },
+        { name: faker.lorem.words() },
+        { name: faker.lorem.words() }
+        // { name: 'Yes'},
+        // { name: 'No' }
       ]);
-    });
+    })
+  ]);
 };
