@@ -5,12 +5,19 @@ const router  = express.Router();
 
 module.exports = (knex) => {
 
-  router.get("/", (req, res) => {
+  router.get("/:url", (req, res) => {
     knex
-      .select("*")
+      .select("poll.question", "option.name")
       .from("poll")
+      .join("option", "poll.id", "=", "option.poll_id")
+      .where(knex.raw("voting_url = ?", req.params.url))
       .then((results) => {
-        res.json(results);
+        if (!results.length) {
+          res.redirect("/");
+        } else {
+          res.json(results);
+        }
+        
     });
   });
 
