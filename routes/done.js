@@ -5,7 +5,7 @@ const router  = express.Router();
 
 module.exports = (knex) => {
 
-  router.get("/:url", (req, res) => {
+  router.post("/", (req, res) => {
     knex
       .select("poll.question", "option.name")
       .from("poll")
@@ -22,4 +22,3 @@ module.exports = (knex) => {
 
   return router;
 }
-
