@@ -1,3 +1,4 @@
+// jshint esversion: 6
 const faker = require("faker");
 
 exports.seed = function(knex, Promise) {
@@ -7,10 +8,31 @@ exports.seed = function(knex, Promise) {
     .del()
     .then(function () {
       return knex('preference').insert([
-          { rank: faker.random.number() },
-          { rank: faker.random.number() },
-          { rank: faker.random.number() },
-          { rank: faker.random.number() },
+          {
+            // vote_id:    1,
+            rank:       faker.random.number({min:1, max:5}),
+            option_id:  1
+          },
+          {
+            // vote_id:    1,
+            rank:       faker.random.number({min:1, max:5}),
+            option_id:  2
+          },
+          {
+            // vote_id:    1,
+            rank:       faker.random.number({min:1, max:5}),
+            option_id:  3
+          },
+          {
+            // vote_id:    1,
+            rank:       faker.random.number({min:1, max:5}),
+            option_id:  4
+          },
+          {
+            // vote_id:    1,
+            rank:       faker.random.number({min:1, max:5}),
+            option_id:  5
+          },
       ]);
     })
   ]);

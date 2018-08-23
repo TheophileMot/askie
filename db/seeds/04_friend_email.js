@@ -1,3 +1,4 @@
+// jshint esversion: 6
 const faker = require("faker");
 
 exports.seed = function(knex, Promise) {
@@ -7,7 +8,9 @@ exports.seed = function(knex, Promise) {
     .del()
     .then(function () {
       return knex('friend_email').insert([
-          { email: faker.internet.email() }
+          { poll_id: 1, email: faker.internet.email() },
+          { poll_id: 1, email: faker.internet.email() },
+          { poll_id: 1, email: faker.internet.email() }
       ]);
     })
   ]);

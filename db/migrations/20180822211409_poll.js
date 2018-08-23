@@ -1,29 +1,18 @@
+// jshint esversion: 6
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('poll', function (table) {
 
-    table
-    .increments('id')
-    .primary();
+    table.increments('id').primary();
 
-    table
-    .string('creator_email');
+    table.string('creator_email');
 
-    table
-    .string('question');
+    table.string('question');
 
-    table
-    .string('voting_url');
+    table.string('voting_url');
 
-    table
-    .string('results_url');
+    table.string('results_url');
 
-    table
-    .timestamp('created_at')
-    .defaultTo(knex.fn.now());
-
-    table
-    .timestamp('updated_at')
-    .defaultTo(knex.fn.now());
+    table.timestamp();
 
   });
 };
