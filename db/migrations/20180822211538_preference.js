@@ -4,19 +4,12 @@ exports.up = function(knex, Promise) {
 
     table.increments('id').primary();
     table.integer('vote_id');
-    table.integer('option_id');
     table.integer('rank');
 
     table
     .foreign("vote_id")
     .references("id")
     .on("vote")
-    .onDelete("cascade");
-
-    table
-    .foreign("option_id")
-    .references("id")
-    .on("option")
     .onDelete("cascade");
 
   });

@@ -4,12 +4,12 @@ exports.up = function(knex, Promise) {
 
     table.increments('id').primary();
     table.string('name');
-    table.integer('preference_rank');
+    table.integer('preference_id');
     table.integer('poll_id');
 
     table
-    .foreign("preference_rank")
-    .references("rank")
+    .foreign("preference_id")
+    .references("id")
     .on("preference")
     .onDelete("cascade");
 
