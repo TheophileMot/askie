@@ -7,14 +7,10 @@ const generateRandomString = () => Math.floor(Math.random() * 1e12).toString(36)
 module.exports = (knex) => {
 
   router.get("/", (req, res) => {
-    console.log('GET create');
-    
     res.render("create");
   });
 
   router.post("/", (req, res) => {
-    console.log('POST create');
-
     const question = req.body.question;
     if (!question) {
       res.redirect("/error");

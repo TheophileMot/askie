@@ -19,7 +19,7 @@ const knexLogger  = require('knex-logger');
 const createRoutes = require("./routes/create");
 const doneRoutes = require("./routes/done");
 const pollRoutes = require("./routes/poll");
-// const resultsRoutes = require("./routes/results");
+const resultsRoutes = require("./routes/results");
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -68,5 +68,5 @@ app.get(/.*/, (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log("Example app listening on port " + PORT);
+  console.log(`Askie listening on port ${PORT}! :D`);
 });

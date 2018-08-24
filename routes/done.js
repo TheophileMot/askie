@@ -6,8 +6,6 @@ const router  = express.Router();
 module.exports = (knex) => {
 
   router.get("/", (req, res) => {
-    console.log('GET done');
-
     let templateVars = {
       question: req.session.question,
       voting_url: req.session.voting_url,
