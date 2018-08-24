@@ -2,27 +2,49 @@
 
 const express = require('express');
 const router  = express.Router();
+const generateRandomString = () => Math.floor(Math.random() * 1e12).toString(36);
 
 module.exports = (knex) => {
 
-    router.get("/", (req, res) => {
-        res.render("create");
-      });
+  router.get("/", (req, res) => {
+    console.log('GET create');
+    
+    res.render("create");
+  });
 
   router.post("/", (req, res) => {
+    console.log('POST create');
+
+    const question = req.body.question;
+    if (!question) {
+      res.redirect("/error");
+    } else {
+      const voting_url = generateRandomString();
+      const results_url = generateRandomString();
+
+      // INSERT INTO poll
+      knex('poll').insert({
+        question: question,
+        voting_url: voting_url,
+        results_url: results_url
+      })
+
+      // INSERT INTO option (for each option provided)
+      for (let i = 1; ; i++) {
+        let option = req.body['option' + i];
+        if (option) {
+          knex('option')
+            .insert({name: option});
+        } else {
+          break;
+        }
+      }
       
-    // knex
-    //   .select("poll.question", "option.name")
-    //   .from("poll")
-    //   .join("option", "poll.id", "=", "option.poll_id")
-    //   .where(knex.raw("voting_url = ?", req.params.url))
-    //   .then((results) => {
-    //     if (!results.length) {
-    //       res.redirect("/done");
-    //     } else {
-    //       res.render(results);
-    //     }
-    // });
+      req.session.question = question;
+      req.session.voting_url = voting_url;
+      req.session.results_url = results_url;
+      res.redirect("/done");
+    }
   });
 
   return router;

@@ -6,6 +6,8 @@ const router  = express.Router();
 module.exports = (knex) => {
 
   router.get("/:url", (req, res) => {
+    console.log('GET poll');
+
     knex
       .select("poll.question", "option.name")
       .from("poll")
@@ -15,7 +17,7 @@ module.exports = (knex) => {
         if (!results.length) {
           res.redirect("/");
         } else {
-          res.render(results);
+          res.render("/poll");
         }
     });
   });
