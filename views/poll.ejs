@@ -31,19 +31,28 @@
     </div>
     <div>
       <form class="poll" action="index.html" method="post">
-        <h3>Temporary page to check /poll</h3>
-        <p><input type="text" name="question" placeholder="Enter your question here"></p>
+        <h4>Re-arrange the items below in order of your preference</h4>
+        <h5>(drag and drop them)</h5>
+        <p name="question">Question here</p>
         <h4>Options:</h4>
 
-        <p><input type="text" name="option1" placeholder="Option #1"></p>
-        <p><input type="text" name="option2" placeholder="Option #2"></p>
-        <p><input type="text" name="option3" placeholder="Option #3"></p>
-        <p><input type="text" name="option4" placeholder="Option #4"></p>
-        <p><input type="text" name="option5" placeholder="Option #5"></p>
+        <div id="place1" class="option" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <p id="drag1" draggable="true" ondragstart="drag(event)">Option #1"</p>
+        </div>
+        <div id="place2" class="option" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <p id="drag2" draggable="true" ondragstart="drag(event)">Option #2"<p>
+        </div>
+        <div id="place3" class="option" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <p id="drag3" draggable="true" ondragstart="drag(event)">Option #3"</p>
+        </div>
+        <div id="place4" class="option" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <p id="drag4" draggable="true" ondragstart="drag(event)">Option #4"</p>
+        </div>
+        <div id="place5" class="option" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <p id="drag5" draggable="true" ondragstart="drag(event)">Option #5"</p>
+        </div>
 
-        <p><button class="button" type="button" name="add_option"> ADD OPTION &#43; </button></p>
-
-        <em><strong><button class="button" type="button" name="done_button" >Let's go!</button></strong></em>
+        <em><strong><button class="button" type="button" name="choice_button" >make your choice!</button></strong></em>
 
     </form>
   </div>
@@ -52,8 +61,8 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
       <script type="text/javascript" src="/scripts/app.js"></script>
+      <script type="text/javascript" src="/scripts/draggable.js"></script>
       <!-- <script type="text/javascript" src="/scripts/create.js"> -->
       <!-- TODO: do not forget to add the script above again -->
-
   </body>
 </html>
