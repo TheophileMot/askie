@@ -7,10 +7,11 @@ module.exports = (knex) => {
 
   router.get("/:url", (req, res) => {
     knex
-      .select("poll.question", "option.name")
+      .select("poll.question", "option.id", "option.name", "preference.option_id", "preference.rank")
       .from("poll")
       .join("option", "poll.id", "=", "option.poll_id")
-      .where(knex.raw("voting_url = ?", req.params.url))
+      .join("preference", "option.id", "=", "preference.option_id")
+      .where(knex.raw("results_url = ?", req.params.url))
       .then((results) => {
         if (!results.length) {
           res.redirect("/error");
@@ -29,9 +30,7 @@ module.exports = (knex) => {
     });
   });
 
-  router.get(/.*/, (req, res) => {
-    res.redirect("/error");
-  });
-
   return router;
 }
+
+//taking info from a cookie ( don't want to do this )
