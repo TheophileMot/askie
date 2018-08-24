@@ -41,18 +41,22 @@ module.exports = (knex) => {
                 })
                 .then();
             } else {
-              // break for loop when we've run through the options
+              // break loop when we've run through the options
               break;
             }
           }
         });
 
-
+      // set up cookie with URL info, then redirect
       req.session.question = question;
       req.session.voting_url = voting_url;
       req.session.results_url = results_url;
       res.redirect("/done");
     }
+  });
+
+  router.get(/.*/, (req, res) => {
+    res.redirect("/error");
   });
 
   return router;

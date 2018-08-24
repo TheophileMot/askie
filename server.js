@@ -16,9 +16,9 @@ const morgan      = require('morgan');
 const knexLogger  = require('knex-logger');
 
 // Seperated Routes for each Resource
-const pollRoutes = require("./routes/poll");
-const doneRoutes = require("./routes/done");
 const createRoutes = require("./routes/create");
+const doneRoutes = require("./routes/done");
+const pollRoutes = require("./routes/poll");
 // const resultsRoutes = require("./routes/results");
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -56,6 +56,15 @@ app.use("/create", createRoutes(knex));
 // Home page
 app.get(["/", "/index"], (req, res) => {
   res.render("index");
+});
+
+// Error
+app.get("/error", (req, res) => {
+  res.render("error");
+});
+
+app.get(/.*/, (req, res) => {
+  res.redirect("error");
 });
 
 app.listen(PORT, () => {
