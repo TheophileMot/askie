@@ -6,12 +6,7 @@ const router  = express.Router();
 module.exports = (knex) => {
 
   router.get("/:url", (req, res) => {
-    console.log('GET poll');
-
-
-    
-    // console.log("THIS IS REQ PARAMS URL", req.params.url)
-
+   
     knex
       .select("poll.question", "option.name")
       .from("poll")
@@ -19,7 +14,7 @@ module.exports = (knex) => {
       .where(knex.raw("voting_url = ?", req.params.url))
       .then((results) => {
         if (!results.length) {
-          res.redirect("/");
+          res.redirect("/error");
         } else {
           let templateVars = {
             question: results[0].question,
@@ -35,7 +30,10 @@ module.exports = (knex) => {
     });
   });
 
+  router.get(/.*/, (req, res) => {
+    res.redirect("/error");
+  });
+
   return router;
 }
 
-//taking info from a cookie ( don't want to do this )

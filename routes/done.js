@@ -16,5 +16,9 @@ module.exports = (knex) => {
     res.render("done", templateVars)
   });
 
+  router.get(/.*/, (req, res) => {
+    res.redirect("/error");
+  });
+
   return router;
 }
