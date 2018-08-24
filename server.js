@@ -8,6 +8,7 @@ const express     = require("express");
 const bodyParser  = require("body-parser");
 const sass        = require("node-sass-middleware");
 const app         = express();
+const cookieSession = require('cookie-session');
 
 const knexConfig  = require("./knexfile");
 const knex        = require("knex")(knexConfig[ENV]);
@@ -15,7 +16,10 @@ const morgan      = require('morgan');
 const knexLogger  = require('knex-logger');
 
 // Seperated Routes for each Resource
-const usersRoutes = require("./routes/users");
+const pollRoutes = require("./routes/poll");
+const doneRoutes = require("./routes/done");
+const createRoutes = require("./routes/create");
+// const resultsRoutes = require("./routes/results");
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -35,19 +39,24 @@ app.use("/styles", sass({
 }));
 app.use(express.static("public"));
 
+app.use(cookieSession({
+  name: 'session',
+  keys: ['very secret key'],
+
+  // Cookie Options
+  maxAge: 60 * 60 * 1000 
+}))
+
 // Mount all resource routes
-app.use("/api/users", usersRoutes(knex));
+app.use("/poll", pollRoutes(knex));
+app.use("/done", doneRoutes(knex));
+app.use("/create", createRoutes(knex));
+// app.use("/results", resultsRoutes(knex));
 
 // Home page
 app.get("/", (req, res) => {
   res.render("index");
 });
-
-// Create new poll
-app.get("/create", (req, res) => {
-  res.render("create");
-});
-
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
