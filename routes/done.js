@@ -13,7 +13,7 @@ module.exports = (knex) => {
       voting_url: req.session.voting_url,
       results_url: req.session.results_url
     }
-    res.render("/done", templateVars)
+    res.render("done", templateVars)
   });
 
   return router;

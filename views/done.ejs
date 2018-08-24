@@ -27,8 +27,10 @@
 
   <div style="text-align: center; margin: 20%">
 
-    <h1 style="margin: 10%">Here are links to your poll</h1>
-    <h2><em>Link to send to your friends: </em><a href="#">INSERT RESULTS LINK</a></h2>
+    <h1 style="margin: 10%">Done!</h1>
+    <h2><em>Vote here: </em><a href="#">
+      <%= voting_url %>
+    </a></h2>
     <div class="friends_email_list">
       <ul>
         <li class="friend_email">
@@ -49,7 +51,9 @@
       </ul>
     </div>
     <br>
-    <h2><em>Link to send to view the vote rusults: </em><a href="#">INSERT VOTING LINK</a></h2>
+    <h2><em>See the results: </em><a href="#">
+      <%= results_url %>
+    </a></h2>
   </div>
   <div style="text-align: center; margin: 20%;">
     <p><a href="/create">Make a new poll</a></p>

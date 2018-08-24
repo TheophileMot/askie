@@ -54,7 +54,7 @@ app.use("/create", createRoutes(knex));
 // app.use("/results", resultsRoutes(knex));
 
 // Home page
-app.get("/", (req, res) => {
+app.get(["/", "/index"], (req, res) => {
   res.render("index");
 });
 

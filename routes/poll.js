@@ -17,7 +17,8 @@ module.exports = (knex) => {
         if (!results.length) {
           res.redirect("/");
         } else {
-          res.render("/poll");
+          console.log('results from db:', results)
+          res.render("poll");
         }
     });
   });
