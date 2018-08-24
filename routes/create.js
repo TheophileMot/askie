@@ -7,14 +7,10 @@ const generateRandomString = () => Math.floor(Math.random() * 1e12).toString(36)
 module.exports = (knex) => {
 
   router.get("/", (req, res) => {
-    console.log('GET create');
-    
     res.render("create");
   });
 
   router.post("/", (req, res) => {
-    console.log('POST create');
-
     const question = req.body.question;
     if (!question) {
       res.redirect("/error");
@@ -41,18 +37,22 @@ module.exports = (knex) => {
                 })
                 .then();
             } else {
-              // break for loop when we've run through the options
+              // break loop when we've run through the options
               break;
             }
           }
         });
 
-
+      // set up cookie with URL info, then redirect
       req.session.question = question;
       req.session.voting_url = voting_url;
       req.session.results_url = results_url;
       res.redirect("/done");
     }
+  });
+
+  router.get(/.*/, (req, res) => {
+    res.redirect("/error");
   });
 
   return router;
