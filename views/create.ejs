@@ -30,16 +30,16 @@
     <div>
       <form class="poll" action="create" method="post">
         <h3>Okay, what's your question?</h3>
-        <p><input type="text" name="question" placeholder="Enter your question here"></p>
+        <p><input type="text" name="question" placeholder="enter your question here"></p>
         <h4>Options:</h4>
+        
+        <div id="option-container">
 
-        <p><input type="text" name="option1" placeholder="Option #1"></p>
-        <p><input type="text" name="option2" placeholder="Option #2"></p>
-        <p><input type="text" name="option3" placeholder="Option #3"></p>
-        <p><input type="text" name="option4" placeholder="Option #4"></p>
-        <p><input type="text" name="option5" placeholder="Option #5"></p>
+        </div>
 
-        <p><button class="button" type="button" name="add_option"> ADD OPTION &#43; </button></p>
+
+        <!-- <p><button id="add" class="button" type="button" name="add_option"> ADD OPTION &#43; </button></p> -->
+
 
         <em><strong><input class="button" type="submit" name="done_button" value="Let's go!"></strong></em>
 
@@ -50,6 +50,7 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
       <script type="text/javascript" src="/scripts/app.js"></script>
+      <script type="text/javascript" src="/scripts/addoption.js"></script>
       <!-- <script type="text/javascript" src="/scripts/create.js"> -->
       <!-- TODO: do not forget to add the script above again -->
 
