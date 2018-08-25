@@ -35,7 +35,7 @@ app.use("/styles", sass({
   src: __dirname + "/styles",
   dest: __dirname + "/public/styles",
   debug: true,
-  outputStyle: 'expanded'
+  outputStyle: 'expanded',
 }));
 app.use(express.static("public"));
 
@@ -44,14 +44,14 @@ app.use(cookieSession({
   keys: ['very secret key'],
 
   // Cookie Options
-  maxAge: 60 * 60 * 1000 
-}))
+  maxAge: 60 * 60 * 1000,
+}));
 
 // Mount all resource routes
 app.use("/poll", pollRoutes(knex));
 app.use("/done", doneRoutes(knex));
 app.use("/create", createRoutes(knex));
-// app.use("/results", resultsRoutes(knex));
+app.use("/results", resultsRoutes(knex));
 
 // Home page
 app.get(["/", "/index"], (req, res) => {
