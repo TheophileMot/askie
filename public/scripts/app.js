@@ -12,7 +12,7 @@ $(document).ready(() => {
         const data = { pollId: pollId, options: optionsArr };
         console.log(data);
         $.ajax( {url:'/poll/' + url, data: data, method:'post' } ).done(function(){
-    
+
         }).catch(function(err){
             console.log(err);
         })
