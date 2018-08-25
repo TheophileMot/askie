@@ -39,8 +39,8 @@
 
         <% for (let i in options) { %>
           <div id="place<%=i + 1%>" class="option" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <p id="drag<%=i + 1%>" class="option-element" draggable="true" ondragstart="drag(event)">
-              <%= options[i] %>
+            <p id="drag<%=i + 1%>" optionId="<%=options[i].id%>" class="option-element" draggable="true" ondragstart="drag(event)">
+              <%= options[i].name %>
             </p>
           </div>
         <% } %>
