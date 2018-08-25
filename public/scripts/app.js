@@ -18,16 +18,15 @@ $(document).ready(() => {
       options: optionsArr,
     };
 
-    console.log('calling ajax with ', data);
     $.ajax( {
       url:'/poll/' + url,
       data: data,
       method:'post',
     })
-      .done( data => console.log(data) )
-      .catch(function(err){
-        console.log(err);
+      .done(function(response, status, xhr) {
+        if (response.redirect) {
+          window.location = response.redirectURL;
+        }
       });
-
   });
 });

@@ -25,8 +25,7 @@ module.exports = (knex) => {
 
               // INSERT INTO preference table, assigning each option a rank according to its index in array
               console.log('rb : ', req.body, req.body.pollId);
-              for (let i = 0; i < -1; i++) {
-              // for (let i = 0; i < req.body.options.length; i++) {
+              for (let i = 0; i < req.body.options.length; i++) {
                 knex('preference')
                   .insert({
                     vote_id: response[0],
@@ -37,8 +36,15 @@ module.exports = (knex) => {
               }
               console.log('*** redirect');
 
-              // res.render('error');
-              res.redirect(`/results/${results[0].results_url}`);
+              // res.redirect(`/results/${results[0].results_url}`);
+
+              // we can't just redirect here, since this will be part of an ajax call:
+              // set up redirect for ajax call
+              let servResp = {};
+              servResp.success = true;
+              servResp.redirect = true;
+              servResp.redirectURL = `/results/${results[0].results_url}`;
+              res.send(servResp);
             });
         }
       });
