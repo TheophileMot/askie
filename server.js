@@ -1,14 +1,18 @@
 "use strict";
 
-require('dotenv').config();
-
+require('dotenv').config(); 
+ 
 const PORT        = process.env.PORT || 8080;
 const ENV         = process.env.ENV || "development";
 const express     = require("express");
 const bodyParser  = require("body-parser");
 const sass        = require("node-sass-middleware");
 const app         = express();
-const cookieSession = require('cookie-session');
+const cookieSession = require("cookie-session");
+const mailgun = require('mailgun-js')({
+  apiKey: process.env.MAILGUN_API_KEY, 
+  domain: process.env.MAILGUN_DOMAIN
+});
 
 const knexConfig  = require("./knexfile");
 const knex        = require("knex")(knexConfig[ENV]);
@@ -55,6 +59,16 @@ app.use("/create", createRoutes(knex));
 
 // Home page
 app.get(["/", "/index"], (req, res) => {
+  // var data = {
+  //   from: 'Mailgun Sandbox <postmaster@sandbox0b08acd30d9147959e36c0d518c5f87e.mailgun.org>',
+  //   to: 'callmedee1@gmail.com',
+  //   subject: 'Hello',
+  //   text: 'Testing some Mailgun awesomeness!'
+  // };
+   
+  // mailgun.messages().send(data, function (error, body) {
+  //   console.log(body);
+  // });
   res.render("index");
 });
 
