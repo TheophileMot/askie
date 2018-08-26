@@ -5,23 +5,8 @@
 <head>
   <title>Here are links to your poll</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+    <% include ./partials/_header %>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <link rel="stylesheet" href="farbtastic.css" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700" rel="stylesheet">
-
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
-  <script type="text/javascript" src="farbtastic.js"></script>
 </head>
 
 <body>
@@ -32,33 +17,67 @@
     <div class="container-fluid"></div>
   </nav>
 
-  <h1>Done!</h1>
-  <h3><em>Vote here: </em>
-    <a href="#">
-      <%= voting_url %>
-    </a>
-    <br>
-    
-    <em>See the results:</em>
-    <a href="#">
-      <%= results_url %>
-    </a>
-  </h3>
-  <br>
-  
-  <div class="friends_email_list">
-    <div><input id="email1" type="email" name="email1" required placeholder="Enter an email address"></div>
-    <div><input id="email2" type="email" name="email2" required placeholder="Enter an email address"></div>
-    <div><input id="email3" type="email" name="email3" required placeholder="Enter an email address"></div>
-  </div>
+  <div style="text-align: center; margin: 10%">
 
+    <h1 style="margin: 10%; color: #04858B">&#x1F389; &#x1F389; &#x1F389; Done! &#x1F389; &#x1F389; &#x1F389;</h1>
+
+    <p>You can be the first to vote by simply clicking this button.
+      <br><br>
+      <input type="button" class="button" value="Vote!" onclick="window.open('http://localhost:8080/poll/<%=voting_url%>');return false">
+    </p>
     <br>
-    <div style="text-align: center">
-      <input class="button btn btn-primary btn-lg btn3d" value="Another askie awaits">
+    <p><em>Copy and send this link to your friends in order to find out their preferences: </em></p>
+    <input id=voting_url type="text" value="http://localhost:8080/poll/<%= voting_url %>" id="myInput">
+
+    &nbsp;
+
+    <img data-clipboard-target="#voting_url" src="https://clipboardjs.com/assets/images/clippy.svg" width="25" onclick="copyFunction()" name="Copy to clipboard" alt="Copy to clipboard">
+
+      <p style="font-size: 3em;">OR</p>
+
+      <p>Enter you friends' emails below, and they will receive this link right away!</p>
+
+    <div class="friends_email_list">
+      <p class="friend_email">
+        <input type="email" name="email" placeholder="Enter an email address" required>
+      </p>
+
+      <p class="friend_email">
+        <input type="email" name="email" rows="1" placeholder="example@example.com"></textarea>
+      </p>
+
+      <p class="friend_email">
+        <input type="email" name="email" rows="1" placeholder="example@example.com"></textarea>
+      </p>
+
+      <p class="friend_email">
+        <input type="email" name="email" rows="1" placeholder="example@example.com"></textarea>
+      </p>
+
+      <button type="button" class="button" name="send_button">Send poll to your friends</button>
+
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <br>
+    <p><em>You can view the <a href="http://localhost:8080/results/<%=results_url%>" style="font-size: inherit;">
+      results on this page
+    </a></em></p>
+
+
+    <div style="text-align: center; margin: 10%;">
+      <a href="/create">Another askie awaits</a>
+    </div>
+
+    <script>
+    function copyFunction() {
+      const copyText = document.getElementById("voting_url");
+      copyText.select();
+      document.execCommand("copy");
+      alert("Copied " + copyText.value + " link. Now share it with your friends");
+    }
+    </script>
+
+    <% include ./partials/_footer %>
+
 </body>
 
 </html>
