@@ -91,7 +91,7 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 80px;
+  margin-top: 100px;
   margin-bottom: 0.5rem;
 }
 
@@ -465,6 +465,11 @@ h6, .h6 {
     color: orange;
 }
 
+.results-bar {
+  text-align: center; 
+  margin: 0 25%;
+}
+
 /* Three column layout */
 .side {
     float: left;
@@ -504,6 +509,8 @@ h6, .h6 {
 .bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
 .bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
 .bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+
+
 
 /* Responsive layout - make the columns stack on top of each other instead of next to each other */
 @media (max-width: 400px) {
