@@ -1,11 +1,11 @@
-.progress-outer{
+.progress-outer {
   background: #000;
   border-radius: 50px;
   padding: 2px;
   margin: 10px 0;
   // box-shadow: 0 0  10px rgba(209, 219, 231,0.7);
 }
-.progress{
+.progress {
   height: 20px;
   // margin: 0;
   // overflow: visible;
@@ -13,57 +13,49 @@
   // background: #eaedf3;
   // box-shadow: inset 0 10px  10px rgba(244, 245, 250,0.9);
 }
-.progress .progress-value{
-  position: relative;
-  left: -45px;
-  top: 4px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  letter-spacing: 2px;
+
+.progress-bar {
+  border-radius: 50px;
 }
-.progress-bar.active{
+
+.judgement-excellent {
+  background-color: #b82;
+  color: #eef;
+  font-size: 120%;
+  animation: animate-positive 6s, glowing 1s infinite alternate;
+}
+.judgement-good {
+  background-color: #44a;
+  color: #ccf;
+  font-size: 120%;
   animation: animate-positive 3s;
 }
-
-.judgement-excellent{
-  color: #ddf;
-  font-size: 120%;
-}
-.judgement-good{
+.judgement-bad {
+  background-color: #228;
   color: #aad;
-  font-size: 120%;
+  animation: animate-positive 2s;
 }
-.judgement-bad{
-  color: #88a;
-}
-.judgement-terrible{
-  color: #eaa;
+.judgement-terrible {
   background-color: #600;
+  color: #eaa;
   font-size: 80%;
+  animation: animate-positive 1s;
 }
 
-// .progress-bar.glow {
-//   animation: glowing 5000ms infinite;
-// }
-
-@-webkit-keyframes animate-positive{
+@-webkit-keyframes animate-positive {
   0% { width: 0%; }
 }
 @keyframes animate-positive {
   0% { width: 0%; }
 }
 
-// @-webkit-keyframes glowing {
-//   0% { box-shadow: 0 0 -10px #c4a300; }
-//   40% { box-shadow: 0 0 20px #c4a300; }
-//   60% { box-shadow: 0 0 20px #c4a300; }
-//   100% { box-shadow: 0 0 -10px #c4a300; }
-// }
-// @keyframes glowing {
-//   0% { box-shadow: 0 0 -10px #c4a300; }
-//   40% { box-shadow: 0 0 20px #c4a300; }
-//   60% { box-shadow: 0 0 20px #c4a300; }
-//   100% { box-shadow: 0 0 -10px #c4a300; }
-// }
+@-webkit-keyframes glowing {
+  0% { font-size: 140% }
+  100% { font-size:120% }
+}
+@keyframes glowing {
+  0% { background-color: #ac4; }
+  50% { background-color: #ac4; }
+  100% { background-color: #8a2; }
+}
 

@@ -10,38 +10,35 @@
   border-radius: 50px;
 }
 
-.progress .progress-value {
-  position: relative;
-  left: -45px;
-  top: 4px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  letter-spacing: 2px;
-}
-
-.progress-bar.active {
-  animation: animate-positive 3s;
+.progress-bar {
+  border-radius: 50px;
 }
 
 .judgement-excellent {
-  color: #ddf;
+  background-color: #b82;
+  color: #eef;
   font-size: 120%;
+  animation: animate-positive 6s, glowing 1s infinite alternate;
 }
 
 .judgement-good {
-  color: #aad;
+  background-color: #44a;
+  color: #ccf;
   font-size: 120%;
+  animation: animate-positive 3s;
 }
 
 .judgement-bad {
-  color: #88a;
+  background-color: #228;
+  color: #aad;
+  animation: animate-positive 2s;
 }
 
 .judgement-terrible {
-  color: #eaa;
   background-color: #600;
+  color: #eaa;
   font-size: 80%;
+  animation: animate-positive 1s;
 }
 
 @-webkit-keyframes animate-positive {
@@ -53,5 +50,26 @@
 @keyframes animate-positive {
   0% {
     width: 0%;
+  }
+}
+
+@-webkit-keyframes glowing {
+  0% {
+    font-size: 140%;
+  }
+  100% {
+    font-size: 120%;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-color: #ac4;
+  }
+  50% {
+    background-color: #ac4;
+  }
+  100% {
+    background-color: #8a2;
   }
 }
