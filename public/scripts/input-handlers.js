@@ -32,7 +32,7 @@ $(document).ready(function() {
   var MAX_EMAILS = 10;
 
 //email handlers for done.ejs file
-  function delOptionHandler(i) {
+  function delEmailHandler(i) {
     if (i === $('.friends_email_list').children().length - 1
         && !$(`#email${i}`).val()) {
       $(`#email${i + 1}`).parent().fadeOut(200, () => $(`#email${i + 1}`).parent().remove());
@@ -40,15 +40,18 @@ $(document).ready(function() {
   }
 
   // if text is added in last input, create a new input, up to MAX_INPUTS
-  function addOptionHandler(i) {
+  function addEmailHandler(i) {
+    console.log("this is indexed", i)
     if (i <= MAX_EMAILS - 1
         && i === $('.friends_email_list').children().length
-        && $(`#option${i}`).val()) {
-      $(`<p><input id="option${i + 1}" class="text_option" type="text" name="option${i + 1}" placeholder="enter next e-mail address"></p>`)
-      .appendTo('#option-container')
-      .keyup(() => addOptionHandler(i + 1))
-      .keyup(() => delOptionHandler(i + 1))
+        && $(`#email${i}`).val()) {
+      $(`<p><input id="email${i + 1}" class="text_option" type="text" name="email${i + 1}" placeholder="enter next e-mail address"></p>`)
+      .appendTo('.friends_email_list')
+      .keyup(() => addEmailHandler(i + 1))
+      .keyup(() => delEmailHandler(i + 1))
       .hide().fadeIn(200);
     }
   }
+  $('#email3').keyup(() => addEmailHandler(3));
+  $('#email3').keyup(() => delEmailHandler(3));
 });
