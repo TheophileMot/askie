@@ -78,7 +78,7 @@ app.get("/error", (req, res) => {
 });
 
 app.get(/.*/, (req, res) => {
-  res.redirect("error");
+  res.redirect("/error");
 });
 
 app.listen(PORT, () => {

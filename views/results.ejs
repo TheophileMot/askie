@@ -17,6 +17,7 @@
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/refresh-results.js"></script>
 </head>
 
 <body>
@@ -32,25 +33,14 @@
     <h1 class="heading" style="margin: 10%">Vote Results</h1>
 
     <div class="poll_results">
-      <% if (numVotes == 0) { %>
-        <p>No votes yet! Remember to tell your friends to weigh in on this pressing matter.</p>
-      <% } else { %>
-        <% var voteWord = 'vote' + (numVotes > 1 ? 's' : ''); %>
-        <p>based on <%= numVotes %> <%= voteWord %>.</p>
-      <% } %>
-
+      <p id="vote-message"><%= voteMessage %></p>
       <div class="row">
         <% for (let i in options) { %>
-          <% var judgement = "terrible"; %>
-          <% if (options[i].score >= 99) { judgement = "excellent"; %>
-          <% } else if (options[i].score > 60) { judgement = "good"; %>
-          <% } else if (options[i].score > 20) { judgement = "bad"; %>
-          <% } %>
 
           <div class="col-sm-12">
             <div class="progress-outer">
               <div class="progress">
-                <div id="optionName<%= options[i].id %>" class="progress-bar progress-bar-info active judgement-<%= judgement %>" style="width:<%= options[i].score %>%"; box-shadow:-1px 10px 10px rgba(91, 192, 222, 0.7);">
+                <div id="option<%= options[i].id %>" class="progress-bar progress-bar-info active <%= options[i].judgement %>" style="width:<%= options[i].score %>%"; box-shadow:-1px 10px 10px rgba(91, 192, 222, 0.7);">
                   <%= options[i].name %>
                 </div>
               </div>
