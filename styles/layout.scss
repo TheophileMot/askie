@@ -11,7 +11,7 @@
 
 html {
   font-family: 'Noto Serif', serif;
-  line-height: 1.15;
+  // line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
@@ -21,9 +21,48 @@ html {
 @-ms-viewport {
   width: device-width;
 }
+
+#nav-bar {
+  margin: 0;
+  background-color: #3893C7;
+  color: white;
+  height: 80px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  padding: 0 2em 0 2em;
+
+  .header {
+    float: left;
+    text-align: center;
+    font-size: 2em;
+    line-height: 2.5em;
+  }
+}
+
+input[type=text],
+input[type=email]
+{
+  border: 5px solid white; 
+  -webkit-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  -moz-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  padding: 15px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 0 10px 0;
+}
+
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
-  color: #fff;
+  color: #ffffff;
   background-color: #596575;
 }
 
@@ -36,8 +75,10 @@ body {
   color: #212529;
   text-align: center;
   padding-top: 20px;
-  background-color: #FCFDEF;
+  background-color: #FFFFFF;
+  
 }
+
 
 [tabindex="-1"]:focus {
   outline: 0 !important;
@@ -50,7 +91,7 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
+  margin-top: 80px;
   margin-bottom: 0.5rem;
 }
 
@@ -144,7 +185,7 @@ sup {
 }
 
 a {
-  color: #5A2749;
+  color: #3893C7;
   text-decoration: none;
   padding-top: 20px;
   text-shadow: blue;
@@ -225,19 +266,38 @@ label {
 }
 
 .button {
-  color: #E0E3E5;
-  background-color: #754949;
+  color: white;
+  background-color: #3893C7;
   border-radius: 10px;
-}
+  .btn3d {
+    position:relative;
+    top: -6px;
+    border:0;
+     transition: all 40ms linear;
+     margin-top:10px;
+     margin-bottom:10px;
+     margin-left:2px;
+     margin-right:2px;
+  }
+  .btn3d:active:focus,
+  .btn3d:focus:hover,
+  .btn3d:focus {
+    -moz-outline-style:none;
+    outline:medium none;
+  }
+  .btn3d:active, .btn3d.active {
+      top:2px;
+    }
+  
+  .btn3d.btn-primary {
+    box-shadow:0 0 0 1px #417fbd inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #4D5BBE, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#4274D7;
+  }
 
-button:hover {
-  color: #EFF1F2;
-  background-color: #8E5858;
-}
-
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+  .btn3d.btn-primary:active, .btn3d.btn-primary.active {
+      box-shadow:0 0 0 1px #417fbd inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+      background-color:#4274D7;
+  }
 }
 
 input,
@@ -455,8 +515,6 @@ h6, .h6 {
         display: none;
     }
 }
-
-
 
 
 .lead {

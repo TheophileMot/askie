@@ -10,49 +10,44 @@
     <!-- favicon END -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="farbtastic.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700" rel="stylesheet">
+    
   </head>
+     <!-- Top Nav Bar  -->
+  <nav id="nav-bar">
+    <span class="header">Askie</span>
+    <div class="container-fluid"></div>
+  </nav>
 
   <body>
-    <header>
-      <div>
-        <h3>&#x25C0; Askie logo/header &#x25B6;</h3>
-      </div>
-    </header>
-    <br>
-    <div>
-    </div>
-    <div>
       <form action="create" method="post">
-        <h3>Okay, what's your question?</h3>
+<h4>So, you'd like to make an informed decision? </h4>
         <p><input id="question" type="text" name="question" placeholder="Who's the fluffiest cat?"></p>
-        <h4>Options:</h4>
-        
         <div id="option-container">
           <p><input id="option1" class="text_option" type="text" name="option1" placeholder="Meowy"></p>
           <p><input id="option2" class="text_option" type="text" name="option2" placeholder="Fluffers"></p>
           <p><input id="option3" class="text_option" type="text" name="option3" placeholder="Miss Whiskers"></p>
         </div>
-
-
         <!-- <p><button id="add" class="button" type="button" name="add_option"> ADD OPTION &#43; </button></p> -->
-
-
-        <em><strong><input class="button" type="submit" name="done_button" value="Let's go!"></strong></em>
+        <input class="button btn btn-primary btn-lg btn3d" type="submit" name="done_button" value="Let's create your askie!">
 
     </form>
-  </div>
+
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
       <script type="text/javascript" src="/scripts/app.js"></script>
       <script type="text/javascript" src="/scripts/input-handlers.js"></script>
+
       <!-- <script type="text/javascript" src="/scripts/create.js"> -->
       <!-- TODO: do not forget to add the script above again -->
 
