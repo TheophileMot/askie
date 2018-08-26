@@ -5,8 +5,6 @@ const router  = express.Router();
 
 module.exports = (knex) => {
 
-  const sortByScore = (a, b) => b.score - a.score;
-
   router.get("/:url", (req, res) => {
     knex
       .select("poll.question", "option.id", "option.name")
@@ -25,6 +23,7 @@ module.exports = (knex) => {
           let optionsObj = {};
           for (let entry of results) {
             optionsObj[entry.id] = {
+              id: entry.id,
               name: entry.name,
               score: 0,
             };
@@ -46,7 +45,16 @@ module.exports = (knex) => {
               for (let id in optionsObj) {
                 templateVars.options.push(optionsObj[id]);
               }
-              templateVars.options.sort(sortByScore);
+              templateVars.options.sort((a, b) => b.score - a.score);
+
+              // finally, convert to percentage
+              const maxScore = templateVars.options[0].score || 1;
+              for (let i = 0; i < templateVars.options.length; i++) {
+                templateVars.options[i].score = Math.round(100 * templateVars.options[i].score / maxScore);
+              }
+
+              // # votes = # ranked choices from all votes / # choices per vote
+              templateVars.numVotes = results.length / templateVars.options.length;
 
               res.render("results", templateVars);
             });

@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/progress.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -31,21 +32,29 @@
     <h1 class="heading" style="margin: 10%">Vote Results</h1>
 
     <div class="poll_results">
-      <p>based on <%= "[pass VOTE COUNT]" %> reviews.</p>
-      <hr style="border:3px solid #f1f1f1">
+      <% if (numVotes == 0) { %>
+        <p>No votes yet! Remember to tell your friends to weigh in on this pressing matter.</p>
+      <% } else { %>
+        <% var voteWord = 'vote' + (numVotes > 1 ? 's' : ''); %>
+        <p>based on <%= numVotes %> <%= voteWord %>.</p>
+      <% } %>
 
       <div class="row">
         <% for (let i in options) { %>
-          <div class="side">
-            <div><%= options[i].name %></div>
-          </div>
-          <div class="middle">
-            <div class="bar-container">
-              <div class="bar-1"></div>
+          <% var judgement = "terrible"; %>
+          <% if (options[i].score >= 99) { judgement = "excellent"; %>
+          <% } else if (options[i].score > 60) { judgement = "good"; %>
+          <% } else if (options[i].score > 20) { judgement = "bad"; %>
+          <% } %>
+
+          <div class="col-sm-12">
+            <div class="progress-outer">
+              <div class="progress">
+                <div id="optionName<%= options[i].id %>" class="progress-bar progress-bar-info active judgement-<%= judgement %>" style="width:<%= options[i].score %>%"; box-shadow:-1px 10px 10px rgba(91, 192, 222, 0.7);">
+                  <%= options[i].name %>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="side right">
-            <div><%= options[i].score %></div>
           </div>
         <% } %>
       </div>
