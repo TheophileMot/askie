@@ -442,6 +442,7 @@ h4, .h4 {
 
 h5, .h5 {
   font-size: 1.25rem;
+  margin-top: 0px;
 }
 
 h6, .h6 {
@@ -1514,6 +1515,7 @@ pre code {
 .logo {
   font: 100% Helvetica, sans-serif;
   color: #333;
+  margin-top: 40px;
 }
 
 /*# sourceMappingURL=output.css.map */
