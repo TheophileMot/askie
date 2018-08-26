@@ -17,7 +17,7 @@ $(document).ready(function() {
     if (i <= MAX_INPUTS - 1
         && i === $('#option-container').children().length
         && $(`#option${i}`).val()) {
-      $(`<p><input id="option${i + 1}" class="text_option" type="text" name="option${i + 1}" placeholder="enter next option"></p>`)
+      $(`<div><input id="option${i + 1}" class="text_option" type="text" name="option${i + 1}" placeholder="enter next option"></div>`)
       .appendTo('#option-container')
       .keyup(() => addOptionHandler(i + 1))
       .keyup(() => delOptionHandler(i + 1))
@@ -28,4 +28,27 @@ $(document).ready(function() {
   // add handlers to third input on page (not to first two, since first three always stay on the page)
   $('#option3').keyup(() => addOptionHandler(3));
   $('#option3').keyup(() => delOptionHandler(3));
+
+  var MAX_EMAILS = 10;
+
+//email handlers for done.ejs file
+  function delOptionHandler(i) {
+    if (i === $('.friends_email_list').children().length - 1
+        && !$(`#email${i}`).val()) {
+      $(`#email${i + 1}`).parent().fadeOut(200, () => $(`#email${i + 1}`).parent().remove());
+    }
+  }
+
+  // if text is added in last input, create a new input, up to MAX_INPUTS
+  function addOptionHandler(i) {
+    if (i <= MAX_EMAILS - 1
+        && i === $('.friends_email_list').children().length
+        && $(`#option${i}`).val()) {
+      $(`<p><input id="option${i + 1}" class="text_option" type="text" name="option${i + 1}" placeholder="enter next e-mail address"></p>`)
+      .appendTo('#option-container')
+      .keyup(() => addOptionHandler(i + 1))
+      .keyup(() => delOptionHandler(i + 1))
+      .hide().fadeIn(200);
+    }
+  }
 });
