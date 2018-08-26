@@ -6,58 +6,50 @@
   <title>Here are links to your poll</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="farbtastic.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700" rel="stylesheet">
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="farbtastic.js"></script>
 </head>
 
 <body>
 
-  <header>
-    <div>
-      <h2>&#x25C0; Askie logo/header &#x25B6;</h2>
-    </div>
-  </header>
+  <!-- Top Nav Bar  -->
+  <nav id="nav-bar">
+    <span class="header">Askie</span>
+    <div class="container-fluid"></div>
+  </nav>
 
-  <div style="text-align: center; margin: 20%">
-
-    <h1 style="margin: 10%">Done!</h1>
+    <h1>Done!</h1>
     <h2><em>Vote here: </em><a href="#">
       <%= voting_url %>
     </a></h2>
   
     <div class="friends_email_list">
-      <ul>
-        <li class="friend_email">
+          <input type="email" name="email" placeholder="Enter an email address" required>
           <input type="email" name="email" placeholder="email address">
-        </li>
-        <li class="friend_email">
           <input type="email" name="email" placeholder="email address">
-        </li>
-        <li class="friend_email">
           <input type="email" name="email" placeholder="email address">
-        </li>
-        <li class="friend_email">
           <input type="email" name="email" placeholder="email address">
-        </li>
-        <li class="friend_email">
-          <input type="email" name="email" placeholder="email address">
-        </li>
-      </ul>
+
     </div>
-    <br>
     <h2><em>See the results: </em><a href="#">
       <%= results_url %>
     </a></h2>
-  </div>
   <div style="text-align: center; margin: 20%;">
-    <p><a href="/create">Make a new poll</a></p>
+    <a href="/create">Make a new poll</a>
   </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
