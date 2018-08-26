@@ -11,8 +11,7 @@ module.exports = (knex) => {
       .select("results_url")
       .from("poll")
       .where(knex.raw("voting_url = ?", req.params.url))
-      .then((results) => {
-        console.log('*** select in poll');
+      .then(results => {
         if (!results.length) {
           res.redirect("/error");
         } else {
@@ -21,10 +20,7 @@ module.exports = (knex) => {
           })
             .returning('id')
             .then(function(response) {
-              console.log('*** insert in pref');
-
               // INSERT INTO preference table, assigning each option a rank according to its index in array
-              console.log('rb : ', req.body, req.body.pollId);
               for (let i = 0; i < req.body.options.length; i++) {
                 knex('preference')
                   .insert({
@@ -34,12 +30,7 @@ module.exports = (knex) => {
                   })
                   .then();
               }
-              console.log('*** redirect');
-
-              // res.redirect(`/results/${results[0].results_url}`);
-
               // we can't just redirect here, since this will be part of an ajax call:
-              // set up redirect for ajax call
               let servResp = {};
               servResp.success = true;
               servResp.redirect = true;
@@ -56,7 +47,7 @@ module.exports = (knex) => {
       .from("poll")
       .join("option", "poll.id", "=", "option.poll_id")
       .where(knex.raw("voting_url = ?", req.params.url))
-      .then((results) => {
+      .then(results => {
         if (!results.length) {
           res.redirect("/error");
         } else {

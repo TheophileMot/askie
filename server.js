@@ -59,16 +59,16 @@ app.use("/results", resultsRoutes(knex));
 
 // Home page
 app.get(["/", "/index"], (req, res) => {
-  // var data = {
-  //   from: 'Mailgun Sandbox <postmaster@sandbox0b08acd30d9147959e36c0d518c5f87e.mailgun.org>',
-  //   to: 'callmedee1@gmail.com',
-  //   subject: 'Hello',
-  //   text: 'Testing some Mailgun awesomeness!'
-  // };
+  var data = {
+    from: 'Hallo <hallo@eigenpunch.com>',
+    to: process.env.MAILGUN_ADDRESSEE_TEST,
+    subject: 'Hallo',
+    text: 'Testing some Mailgun awesomeness!'
+  };
    
-  // mailgun.messages().send(data, function (error, body) {
-  //   console.log(body);
-  // });
+  mailgun.messages().send(data, function (error, body) {
+    console.log(body);
+  });
   res.render("index");
 });
 
