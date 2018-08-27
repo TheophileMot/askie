@@ -1,7 +1,6 @@
 $(document).ready(function() {
   // if everything's empty, reset placeholders
   // { ... }
-
   var MAX_INPUTS = 10;
 
   // if text is deleted in second-last input, remove last input (actually, its parent <P>) if empty
@@ -38,8 +37,7 @@ $(document).ready(function() {
       $(`#email${i + 1}`).parent().fadeOut(200, () => $(`#email${i + 1}`).parent().remove());
     }
   }
-
-  // if text is added in last input, create a new input, up to MAX_INPUTS
+  // if text is added in last input, create a new input, up to MAX_EMAILS
   function addEmailHandler(i) {
     if (i <= MAX_EMAILS - 1
         && i === $('.friends_email_list').children().length
@@ -51,6 +49,7 @@ $(document).ready(function() {
       .hide().fadeIn(200);
     }
   }
+
   $('#email3').keyup(() => addEmailHandler(3));
   $('#email3').keyup(() => delEmailHandler(3));
 });

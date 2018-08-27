@@ -1,31 +1,22 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <title>Home Page</title>
-
+  </head>
+  <body>
       <% include ./partials/_header %>
 
-  </head>
-    <!-- Top Nav Bar  -->
-  <body>
-    <nav id="nav-bar">
-      <span class="header composer">Askie</span>
-      <div class="container-fluid"></div>
-    </nav>
-
-    <h5>Oh no! Something went wrong.</h5>
-    <br>
-    <div style="text-align: center">
-        Why am I here?
-        <br>
-        What went wrong?
-        <br>
-        What does anything mean?
-      </div>
+      <h4>Oh no! Something went wrong.</h4>
       <br>
-      <input id="create-button" class="button btn btn-primary btn-lg btn3d" value="Create an askie">
-          <% include ./partials/_footer%>
-
-  </body>
+      <div class="error-buttons" style="text-align: center"></div>
+      <input class="button btn btn-primary btn-lg btn3d" type="submit" name="done_button" value="Why am I here?" style="width:400px">
+      <br><br>
+      <input class="button btn btn-primary btn-lg btn3d" type="submit" name="done_button" value="What went wrong?" style="width:400px">
+      <br><br>
+      <input class="button btn btn-primary btn-lg btn3d" type="submit" name="done_button" value="What does anything mean?" style="width:400px">
+      </div>
+      <br><br>
+      
+      <% include ./partials/_footer%>
+    </body>
 </html>

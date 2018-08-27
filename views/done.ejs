@@ -8,29 +8,18 @@
 </head>
 
 <body>
-  <!-- Top Nav Bar  -->
-  <nav id="nav-bar">
-    <span class="header composer">Askie</span>
-    <div class="container-fluid"></div>
-  </nav>
-
   <div style="text-align: center; margin: 10%">
-
     <h1 style="color: #3893C7">&#x1F389; &#x1F389; &#x1F389; Done! &#x1F389; &#x1F389; &#x1F389;</h1>
-
-    <p>You can be the first to vote by simply clicking this button.
+    <p>Be the first to vote and click this button:
       <br><br>
       <input class="button btn btn-primary btn-lg btn3d" type="submit"value="Vote!" onclick="window.open('http://localhost:8080/poll/<%=voting_url%>');return false">
     </p>
-    <br>
-    <p>Copy and send this link to your friends in order to find out their preferences: </p>
-    <input id=voting_url type="text" value="http://localhost:8080/poll/<%= voting_url %>" id="myInput">
 
+    <p>Copy and send this link to discover your friends' preferences:</p>
+    <input id=voting_url type="text" value="http://localhost:8080/poll/<%= voting_url %>" id="myInput">
     &nbsp;
 
     <img id="clipboard" src="https://clipboardjs.com/assets/images/clippy.svg" width="25" onclick="copyFunction()" name="Copy to clipboard" alt="Copy to clipboard">
-
-      <p style="font-size: 3em;">OR</p>
 
       <p>Enter you friends' emails below, and they will receive this link right away!</p>
 
@@ -42,9 +31,9 @@
 
         <button type="button" class="button" name="send_button">Send poll to your friends</button>
     <br>
-    <p><em>You can view the <a href="http://localhost:8080/results/<%=results_url%>" style="font-size: inherit;">
+    <p>You can view the <a href="http://localhost:8080/results/<%=results_url%>" style="font-size: inherit;">
       results on this page
-    </a></em></p>
+    </a></p>
 
 
     <div style="text-align: center">
