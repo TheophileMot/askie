@@ -15,7 +15,6 @@
       </style>
       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
   </head>
 
   <body>
@@ -23,10 +22,9 @@
       <input type="hidden" value="<%=poll_id%>" name="poll_id">
       <input type="hidden" value="<%=url%>" name="url">
       <h4 name="question">
-        So
         <%= question %>
       </h4>
-      <h4>Re-arrange the items below in order of your preference</h4>
+      <h4>Rearrange the items below in order of your preference</h4>
       <p>(drag and drop them)</p>
       <% for (let i in options) { %>
         <div id="place<%=i%>" class="option" ondrop="drop(event)" ondragover="allowDrop(event)" style="color: #797979;">

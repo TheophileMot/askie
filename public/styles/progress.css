@@ -6,7 +6,8 @@
 }
 
 .progress {
-  height: 20px;
+  height: 30px;
+  font-size: 150%;
   border-radius: 50px;
 }
 
