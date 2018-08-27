@@ -8,11 +8,11 @@ module.exports = (knex) => {
 
   router.get("/", (req, res) => {
     let templateVars = {
-      question: 'Who\'s the fluffiest cat?',
-      option1: 'Meowy',
-      option2: 'Fluffers',
-      option3: 'Miss Whiskers',
-    }
+      question: 'What should we eat for supper?',
+      option1: 'Porridge',
+      option2: 'Squash',
+      option3: 'Cruciferous veggies',
+    };
     res.render("create", templateVars);
   });
 
@@ -63,7 +63,7 @@ module.exports = (knex) => {
       option1: 'Why not?',
       option2: 'The Internet broke',
       option3: 'Is this really an error page?',
-    }
+    };
     res.render("create", templateVars);
   });
 
@@ -73,17 +73,17 @@ module.exports = (knex) => {
       option1: 'Nope.',
       option2: 'No way.',
       option3: 'Maybe?!',
-    }
+    };
     res.render("create", templateVars);
   });
 
   router.get("/error3", (req, res) => {
     let templateVars = {
-      question: 'What should we eat for supper?',
-      option1: 'Porridge',
-      option2: 'Squash',
-      option3: 'Cruciferous veggies',
-    }
+      question: 'Who\'s the fluffiest cat?',
+      option1: 'Meowy',
+      option2: 'Fluffers',
+      option3: 'Miss Whiskers',
+    };
     res.render("create", templateVars);
   });
 
