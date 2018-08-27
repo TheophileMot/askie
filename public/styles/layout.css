@@ -38,6 +38,7 @@ html {
   position: fixed;
   right: 0;
   padding: 0 2em 0 2em;
+  z-index: 1;
 }
 
 #nav-bar .header {

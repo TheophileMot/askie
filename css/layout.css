@@ -32,7 +32,8 @@ html {
   left: 0;
   position: fixed;
   right: 0;
-  padding: 0 2em 0 2em; }
+  padding: 0 2em 0 2em;
+  z-index: 1; }
   #nav-bar .header {
     float: left;
     text-align: center;
