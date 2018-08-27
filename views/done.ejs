@@ -23,12 +23,12 @@
       <input class="button btn btn-primary btn-lg btn3d" type="submit"value="Vote!" onclick="window.open('http://localhost:8080/poll/<%=voting_url%>');return false">
     </p>
     <br>
-    <p><em>Copy and send this link to your friends in order to find out their preferences: </em></p>
+    <p>Copy and send this link to your friends in order to find out their preferences: </p>
     <input id=voting_url type="text" value="http://localhost:8080/poll/<%= voting_url %>" id="myInput">
 
     &nbsp;
 
-    <img data-clipboard-target="#voting_url" src="https://clipboardjs.com/assets/images/clippy.svg" width="25" onclick="copyFunction()" name="Copy to clipboard" alt="Copy to clipboard">
+    <img id="clipboard" src="https://clipboardjs.com/assets/images/clippy.svg" width="25" onclick="copyFunction()" name="Copy to clipboard" alt="Copy to clipboard">
 
       <p style="font-size: 3em;">OR</p>
 
@@ -50,15 +50,6 @@
     <div style="text-align: center">
         <input id="create-button" class="button btn btn-primary btn-lg btn3d" value="Another askie awaits"></a>
     </div>
-
-    <script>
-    function copyFunction() {
-      const copyText = document.getElementById("voting_url");
-      copyText.select();
-      document.execCommand("copy");
-      alert("Copied " + copyText.value + " link. Now share it with your friends");
-    }
-    </script>
 
     <% include ./partials/_footer %>
 
