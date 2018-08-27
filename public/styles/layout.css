@@ -25,6 +25,10 @@ html {
   background-color: #FCC;
   color: #822;
   visibility: hidden;
+  text-align: center;
+  width: 44%;
+  margin: auto;
+  padding: 10px;
 }
 
 #nav-bar {
