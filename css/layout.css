@@ -299,7 +299,8 @@ label {
 .button {
   color: white;
   background-color: #3893C7;
-  border-radius: 10px; }
+  border-radius: 10px;
+  cursor: default; }
   .button .btn3d {
     position: relative;
     top: -6px;
@@ -332,17 +333,20 @@ textarea {
   width: 250px;
   font-family: inherit;
   font-size: inherit;
-  line-height: inherit; }
+  line-height: inherit;
+  cursor: default; }
 
 button,
 input {
   overflow: visible;
   border-color: silver;
-  background-color: #FCFCFD; }
+  background-color: #FCFCFD;
+  cursor: default; }
 
 button,
 select {
-  text-transform: none; }
+  text-transform: none;
+  cursor: default; }
 
 button,
 html [type=button],
