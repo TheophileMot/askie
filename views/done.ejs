@@ -3,14 +3,11 @@
 <html lang="en">
 
 <head>
-  <title>Here are links to your poll</title>
-
+  <title>Retrieve thelinks to your poll</title>
     <% include ./partials/_header %>
-
 </head>
 
 <body>
-
   <!-- Top Nav Bar  -->
   <nav id="nav-bar">
     <span class="header">Askie</span>
@@ -19,11 +16,11 @@
 
   <div style="text-align: center; margin: 10%">
 
-    <h1 style="margin: 10%; color: #04858B">&#x1F389; &#x1F389; &#x1F389; Done! &#x1F389; &#x1F389; &#x1F389;</h1>
+    <h1 style="color: #3893C7">&#x1F389; &#x1F389; &#x1F389; Done! &#x1F389; &#x1F389; &#x1F389;</h1>
 
     <p>You can be the first to vote by simply clicking this button.
       <br><br>
-      <input type="button" class="button" value="Vote!" onclick="window.open('http://localhost:8080/poll/<%=voting_url%>');return false">
+      <input class="button btn btn-primary btn-lg btn3d" type="submit"value="Vote!" onclick="window.open('http://localhost:8080/poll/<%=voting_url%>');return false">
     </p>
     <br>
     <p><em>Copy and send this link to your friends in order to find out their preferences: </em></p>
@@ -37,34 +34,20 @@
 
       <p>Enter you friends' emails below, and they will receive this link right away!</p>
 
-    <div class="friends_email_list">
-      <p class="friend_email">
-        <input type="email" name="email" placeholder="Enter an email address" required>
-      </p>
+      <div class="friends_email_list">
+        <div><input id="email1" type="email" name="email1" required placeholder="Enter an email address"></div>
+        <div><input id="email2" type="email" name="email2" required placeholder="Enter an email address"></div>
+        <div><input id="email3" type="email" name="email3" required placeholder="Enter an email address"></div>
+      </div>
 
-      <p class="friend_email">
-        <input type="email" name="email" rows="1" placeholder="example@example.com"></textarea>
-      </p>
-
-      <p class="friend_email">
-        <input type="email" name="email" rows="1" placeholder="example@example.com"></textarea>
-      </p>
-
-      <p class="friend_email">
-        <input type="email" name="email" rows="1" placeholder="example@example.com"></textarea>
-      </p>
-
-      <button type="button" class="button" name="send_button">Send poll to your friends</button>
-
-    </div>
     <br>
     <p><em>You can view the <a href="http://localhost:8080/results/<%=results_url%>" style="font-size: inherit;">
       results on this page
     </a></em></p>
 
 
-    <div style="text-align: center; margin: 10%;">
-      <a href="/create">Another askie awaits</a>
+    <div style="text-align: center">
+        <input class="button btn btn-primary btn-lg btn3d" value="Another askie awaits"></a>
     </div>
 
     <script>
