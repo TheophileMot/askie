@@ -31,7 +31,7 @@ $(document).ready(() => {
   });
 
   // from the index.ejs file - this adds functionality to the creation button
-  $('.button').click(function() {
+  $('#create-button').click(function() {
     window.location='/create';
   });
 

@@ -14,16 +14,10 @@
     </div>
   </nav>
 
-<<<<<<< HEAD
-  <div class="results-bar">
-    <h1>...and the winner is:</h1>
-
-=======
   <div style="text-align: center; margin: 20%">
     <h1 class="heading" style="margin: 10%">Vote Results</h1>
       
     <h2><%= question %></h2>
->>>>>>> results-magic
     <div class="poll_results">
       <p id="vote-message"><%= voteMessage %></p>
       <div id="results-container" class="row">
@@ -44,7 +38,7 @@
 </div>
   <!-- <div style="text-align: center"> -->
     <br>
-    <input class="button btn btn-primary btn-lg btn3d" value="Create a new askie?">
+    <input id="create-button" class="button btn btn-primary btn-lg btn3d" value="Create a new askie?">
   </div>
   <script type="text/javascript" src="/scripts/refresh-results.js"></script>
     <% include ./partials/_footer%>
