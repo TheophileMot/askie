@@ -60,6 +60,86 @@ input[type=text] {
   margin: 0 0 10px 0;
 }
 
+#option1 {
+  background-color: #eef;
+}
+
+#option2 {
+  background-color: #eef;
+}
+
+#option3 {
+  background-color: #eef;
+}
+
+#option4 {
+  background-color: #eef;
+}
+
+#option5 {
+  background-color: #eef;
+}
+
+#option6 {
+  background-color: #eef;
+}
+
+#option7 {
+  background-color: #eef;
+}
+
+#option8 {
+  background-color: #eef;
+}
+
+#option9 {
+  background-color: #eef;
+}
+
+#option10 {
+  background-color: #eef;
+}
+
+#email1 {
+  background-color: #eef;
+}
+
+#email2 {
+  background-color: #eef;
+}
+
+#email3 {
+  background-color: #eef;
+}
+
+#email4 {
+  background-color: #eef;
+}
+
+#email5 {
+  background-color: #eef;
+}
+
+#email6 {
+  background-color: #eef;
+}
+
+#email7 {
+  background-color: #eef;
+}
+
+#email8 {
+  background-color: #eef;
+}
+
+#email9 {
+  background-color: #eef;
+}
+
+#email10 {
+  background-color: #eef;
+}
+
 input[type=email] {
   border: 5px solid white;
   -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
@@ -184,6 +264,12 @@ sup {
   background: #C5EFFF;
   border-radius: 10px;
   margin: auto;
+  cursor: default;
+  user-select: none;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
 }
 
 .poll {

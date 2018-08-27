@@ -3,37 +3,25 @@
 <html lang="en">
   <head>
     <title>Create your poll</title>
-
-        <% include ./partials/_header %>
-
+    <% include ./partials/_header %>
   </head>
-     <!-- Top Nav Bar  -->
-  <nav id="nav-bar">
-    <span class="header composer">Askie</span>
-    <div class="container-fluid"></div>
-  </nav>
-
   <body>
-      <form action="create" method="post">
-        <h4>So, you'd like to make an informed decision? </h4>
-        <br>
-        <p><input id="question" type="text" name="question" placeholder="Who's the fluffiest cat?" style="width:500px; font-size:20px"></p>
-        <br>
-        <div id="option-container">
-          <p><input id="option1" class="text_option" type="text" name="option1" placeholder="Meowy" style="background-color:#eef;"></p>
-          <p><input id="option2" class="text_option" type="text" name="option2" placeholder="Fluffers" style="background-color:#eef;"></p>
-          <p><input id="option3" class="text_option" type="text" name="option3" placeholder="Miss Whiskers" style="background-color:#eef;"></p>
-        </div>
-        <br>
-        
-
-        <!-- <p><button id="add" class="button" type="button" name="add_option"> ADD OPTION &#43; </button></p> -->
-        <input class="button btn btn-primary btn-lg btn3d" type="submit" name="done_button" value="Create your askie!">
+    <form action="create" method="post">
+      <h4>So, you'd like to make an informed decision? </h4>
+      <br>
+      <p><input id="question" type="text" name="question" placeholder="Who's the fluffiest cat?" style="width:500px; font-size:23px"></p>
+      <br>
+      <div id="option-container">
+        <p><input id="option1" class="text_option" type="text" name="option1" placeholder="Meowy"></p>
+        <p><input id="option2" class="text_option" type="text" name="option2" placeholder="Fluffers"></p>
+        <p><input id="option3" class="text_option" type="text" name="option3" placeholder="Miss Whiskers"></p>
+      </div>
+      <br>
+      <input class="button btn btn-primary btn-lg btn3d" type="submit" name="done_button" value="Create your askie!">
     </form>
-
-        <% include ./partials/_footer %>
+    
+    <% include ./partials/_footer %>
       <!-- <script type="text/javascript" src="/scripts/create.js"> -->
       <!-- TODO: do not forget to add the script above again -->
-
   </body>
 </html>
