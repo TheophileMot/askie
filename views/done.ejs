@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-  <title>Retrieve thelinks to your poll</title>
-    <% include ./partials/_header %>
+  <title>Send your poll</title>
+  <% include ./partials/_header %>
 </head>
 
 <body>
@@ -20,24 +19,21 @@
     &nbsp;
 
     <img id="clipboard" src="https://clipboardjs.com/assets/images/clippy.svg" width="25" onclick="copyFunction()" name="Copy to clipboard" alt="Copy to clipboard">
-
-      <p>Enter you friends' emails below, and they will receive this link right away!</p>
-
-      <div class="friends_email_list">
-        <div><input id="email1" type="email" name="email1" required placeholder="Enter an email address"></div>
-        <div><input id="email2" type="email" name="email2" required placeholder="Enter an email address"></div>
-        <div><input id="email3" type="email" name="email3" required placeholder="Enter an email address"></div>
-      </div>
-
-        <button type="button" class="button" name="send_button">Send poll to your friends</button>
+    <p>Or enter your friends' emails and click send:</p>
+    <div class="friends_email_list">
+      <div><input id="email1" type="email" name="email1" required placeholder="Enter an email address"></div>
+      <div><input id="email2" type="email" name="email2" required placeholder="Enter an email address"></div>
+      <div><input id="email3" type="email" name="email3" required placeholder="Enter an email address"></div>
+    </div>
+    
+    <button type="button" class="button btn btn-primary btn-lg btn3d" name="send_button">Send your poll</button>
     <br>
-    <p>You can view the <a href="http://localhost:8080/results/<%=results_url%>" style="font-size: inherit;">
-      results on this page
+    <p>You can view the results on this page. <a href="http://localhost:8080/results/<%=results_url%>" style="font-size: inherit;">
+      Click!
     </a></p>
-
-
+    
     <div style="text-align: center">
-        <input id="create-button" class="button btn btn-primary btn-lg btn3d" value="Another askie awaits"></a>
+      <input id="create-button" class="button btn btn-primary btn-lg btn3d" value="Another askie awaits"></a>
     </div>
 
     <% include ./partials/_footer %>
