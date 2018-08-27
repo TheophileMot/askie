@@ -153,7 +153,13 @@ sup {
   width: 300px;
   background: #C5EFFF;
   border-radius: 10px;
-  margin: auto; }
+  margin: auto;
+  cursor: default;
+  user-select: none;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none; }
 
 .poll {
   border-radius: 5px;
