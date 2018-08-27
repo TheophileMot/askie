@@ -62,16 +62,16 @@ input[type=text]
 
 input[type=email]
 {
-  border: 5px solid white; 
-  -webkit-box-shadow: 
+  border: 5px solid white;
+  -webkit-box-shadow:
     inset 0 0 8px  rgba(0,0,0,0.1),
-          0 0 16px rgba(0,0,0,0.1); 
-  -moz-box-shadow: 
+          0 0 16px rgba(0,0,0,0.1);
+  -moz-box-shadow:
     inset 0 0 8px  rgba(0,0,0,0.1),
-          0 0 16px rgba(0,0,0,0.1); 
-  box-shadow: 
+          0 0 16px rgba(0,0,0,0.1);
+  box-shadow:
     inset 0 0 8px  rgba(0,0,0,0.1),
-          0 0 16px rgba(0,0,0,0.1); 
+          0 0 16px rgba(0,0,0,0.1);
   padding: 15px;
   background: rgba(255,255,255,0.5);
   margin: 0 0 10px 0;
@@ -93,7 +93,7 @@ body {
   text-align: center;
   padding-top: 20px;
   background-color: #FFFFFF;
-  
+
 }
 
 
@@ -190,7 +190,7 @@ sup {
 .option {
   border: 2px;
   width: 300px;
-  background: #C1A3A3;
+  background: #C5EFFF;
   border-radius: 10px;
   margin: auto;
 }
@@ -305,7 +305,7 @@ label {
   .btn3d:active, .btn3d.active {
       top:2px;
     }
-  
+
   .btn3d.btn-primary {
     box-shadow:0 0 0 1px #417fbd inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #4D5BBE, 0 8px 8px 1px rgba(0,0,0,0.5);
     background-color:#4274D7;
@@ -484,7 +484,7 @@ h6, .h6 {
 }
 
 .results-bar {
-  text-align: center; 
+  text-align: center;
   margin: 0 25%;
 }
 
