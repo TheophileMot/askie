@@ -4,7 +4,7 @@ function isCreateFormValid() {
   }
   let numValidOptions = 0;
   for (let i = 0; i < $('#option-container').children().length; i++) {
-    if ($('.text_option').eq(i).val().length) {
+    if ($('.text-option').eq(i).val().length) {
       numValidOptions++;
     }
   }

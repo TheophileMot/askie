@@ -16,7 +16,7 @@ $(document).ready(function() {
     if (i <= MAX_INPUTS - 1
         && i === $('#option-container').children().length
         && $(`#option${i}`).val()) {
-      $(`<div><input id="option${i + 1}" class="text_option" type="text" name="option${i + 1}" placeholder="next option"></div>`)
+      $(`<div><input id="option${i + 1}" class="text-option" type="text" name="option${i + 1}" placeholder="next option"></div>`)
       .appendTo('#option-container')
       .keyup(() => addOptionHandler(i + 1))
       .keyup(() => delOptionHandler(i + 1))
@@ -27,6 +27,36 @@ $(document).ready(function() {
   // add handlers to third input on page (not to first two, since first three always stay on the page)
   $('#option3').keyup(() => addOptionHandler(3));
   $('#option3').keyup(() => delOptionHandler(3));
+
+  // if user types anywhere, erase all placeholders, or restore them if all text inputs are empty
+  function handlePlaceholders() {
+    if ($('#question').val().length) {
+      return clearPlaceholders();
+    }
+    for (var i = 0; i < $('#option-container').children().length; i++) {
+      if ($('.text-option').eq(i).val().length) {
+        return clearPlaceholders();
+      }
+    }
+    return restorePlaceholders();
+  }
+
+  function clearPlaceholders() {
+    $('#question').attr('placeholder', '');
+    $('#option1').attr('placeholder', '');
+    $('#option2').attr('placeholder', '');
+    $('#option3').attr('placeholder', '');
+  }
+
+  function restorePlaceholders() {
+    $('#question').attr('placeholder', 'enter your question here');
+    $('#option1').attr('placeholder', 'first option');
+    $('#option2').attr('placeholder', 'second option');
+    $('#option3').attr('placeholder', 'why not a third?');
+  }
+
+  $('#question').keyup(() => handlePlaceholders());
+  $('.text-option').keyup(() => handlePlaceholders());
 
   var MAX_EMAILS = 10;
 
@@ -42,7 +72,7 @@ $(document).ready(function() {
     if (i <= MAX_EMAILS - 1
         && i === $('.friends_email_list').children().length
         && $(`#email${i}`).val()) {
-      $(`<p><input id="email${i + 1}" class="text_option" type="text" name="email${i + 1}" placeholder="enter next e-mail address"></p>`)
+      $(`<p><input id="email${i + 1}" class="text-option" type="text" name="email${i + 1}" placeholder="enter next e-mail address"></p>`)
       .appendTo('.friends_email_list')
       .keyup(() => addEmailHandler(i + 1))
       .keyup(() => delEmailHandler(i + 1))
