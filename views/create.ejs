@@ -6,9 +6,11 @@
     <% include ./partials/_header %>
   </head>
   <body>
+    <div></div>
     <form id="create-poll" action="create" method="post">
       <h4>So, you'd like to make an informed decision? </h4>
       <br>
+      <div id="create-validation-error">Please enter a question and at least two options!</div>
       <p><input id="question" type="text" name="question" placeholder="<%= question %>" style="width:500px; font-size:23px"></p>
       <br>
       <div id="option-container">

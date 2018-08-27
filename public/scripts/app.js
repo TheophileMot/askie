@@ -3,6 +3,12 @@
 $(document).ready(() => {
   $('#create-poll').submit(function(event) {
     if (!isCreateFormValid()) {
+      $('#create-validation-error').css('visibility', 'visible');
+      setTimeout( () => {
+        $('#create-validation-error').animate({
+          opacity: 0,
+        }, 2000, function() { $(this).css('visibility', 'hidden').css('opacity', 1); });
+      }, 2000);
       event.preventDefault();
     }
   });

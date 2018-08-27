@@ -21,6 +21,12 @@ html {
   width: device-width;
 }
 
+#create-validation-error {
+  background-color: #FCC;
+  color: #822;
+  visibility: hidden;
+}
+
 #nav-bar {
   margin: 0;
   background-color: #3893C7;
