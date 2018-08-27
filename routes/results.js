@@ -9,9 +9,9 @@ module.exports = (knex) => {
   function judge(score) {
     if (score >= 99) {
       return "judgement-excellent";
-    } else if (score >= 60) {
+    } else if (score >= 50) {
       return "judgement-good";
-    } else if (score >= 20) {
+    } else if (score >= 33) {
       return "judgement-bad";
     } else {
       return "judgement-terrible";
@@ -23,11 +23,11 @@ module.exports = (knex) => {
     if (numVotes == 0) {
       return 'No votes yet! Remember to tell your friends to weigh in on this pressing matter.';
     } else if (numVotes == 1) {
-      return 'Based on a single vote.';
+      return '... based on a single vote.';
     } else if (numVotes <= 20) {
-      return `Based on ${numVotes} votes.`;
+      return `... based on ${numVotes} votes.`;
     } else {
-      return `Based on ${numVotes} votes. This is a hot issue!`;
+      return `... based on ${numVotes} votes. This is a hot issue!`;
     }
   }
 
