@@ -21,32 +21,25 @@
           $( "#sortable" ).disableSelection();
         } );
       </script>
-
   </head>
 
   <body>
-    <nav id="nav-bar">
-      <span class="header composer">Askie</span>
-      <div class="container-fluid"></div>
-    </nav>
-
-      <form class="poll" action="/poll/<%=url%>" method="post">
-        <input type="hidden" value="<%=poll_id%>" name="poll_id">
-        <input type="hidden" value="<%=url%>" name="url">
-        <h4 name="question">
-          So
-          <%= question %>
-        </h4>
-        <h4>Re-arrange the items below in order of your preference</h4>
-        <p>(drag and drop them)</p>
-        <% for (let i in options) { %>
+    <form class="poll" action="/poll/<%=url%>" method="post">
+      <input type="hidden" value="<%=poll_id%>" name="poll_id">
+      <input type="hidden" value="<%=url%>" name="url">
+      <h4 name="question">
+        So
+        <%= question %>
+      </h4>
+      <h4>Re-arrange the items below in order of your preference</h4>
+      <p>(drag and drop them)</p>
+      <% for (let i in options) { %>
         <div id="place<%=i%>" class="option" ondrop="drop(event)" ondragover="allowDrop(event)" style="color: #797979;">
           Place <%= Number(i) + 1 %> (drop here)
-
-            <p id="drag<%=i%>" optionId="<%=options[i].id%>" class="option-element ui-state-default option" draggable="true" ondragstart="drag(event)">
-              <%= options[i].name %> <span>Drag me</span>
-            </p>
-          </div>
+          <p id="drag<%=i%>" optionId="<%=options[i].id%>" class="option-element ui-state-default option" draggable="true" ondragstart="drag(event)">
+            <%= options[i].name %> <span>Drag me</span>
+          </p>
+        </div>
         <% } %>
         <div style="text-align: center; margin: 5%;">
         <input class="button" type="submit" value="make your choice!">
