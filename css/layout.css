@@ -34,6 +34,13 @@ html {
     font-size: 2em;
     line-height: 2.5em; }
 
+.composer {
+  cursor: default; }
+
+.composer:hover {
+  background: white;
+  color: #3893C7; }
+
 input[type=text] {
   border: 5px solid white;
   -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
@@ -144,7 +151,7 @@ sup {
 .option {
   border: 2px;
   width: 300px;
-  background: #C1A3A3;
+  background: #C5EFFF;
   border-radius: 10px;
   margin: auto; }
 
