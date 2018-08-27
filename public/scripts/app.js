@@ -45,4 +45,14 @@ $(document).ready(() => {
     window.location = '/create';
   });
 
+  $('#error1').click(function() {
+    window.location = '/create/error1';
+  });
+  $('#error2').click(function() {
+    window.location = '/create/error2';
+  });
+  $('#error3').click(function() {
+    window.location = '/create/error3';
+  });
+
 });

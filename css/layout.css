@@ -333,15 +333,13 @@ textarea {
   width: 250px;
   font-family: inherit;
   font-size: inherit;
-  line-height: inherit;
-  cursor: default; }
+  line-height: inherit; }
 
 button,
 input {
   overflow: visible;
   border-color: silver;
-  background-color: #FCFCFD;
-  cursor: default; }
+  background-color: #FCFCFD; }
 
 button,
 select {

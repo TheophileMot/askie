@@ -7,7 +7,13 @@ const generateRandomString = () => Math.floor(Math.random() * 1e12).toString(36)
 module.exports = (knex) => {
 
   router.get("/", (req, res) => {
-    res.render("create");
+    let templateVars = {
+      question: 'Who\'s the fluffiest cat?',
+      option1: 'Meowy',
+      option2: 'Fluffers',
+      option3: 'Miss Whiskers',
+    }
+    res.render("create", templateVars);
   });
 
   router.post("/", (req, res) => {
@@ -49,6 +55,36 @@ module.exports = (knex) => {
       req.session.results_url = results_url;
       res.redirect("/done");
     }
+  });
+
+  router.get("/error1", (req, res) => {
+    let templateVars = {
+      question: 'Why am I here?',
+      option1: 'Why not?',
+      option2: 'The Internet broke',
+      option3: 'Is this really an error page?',
+    }
+    res.render("create", templateVars);
+  });
+
+  router.get("/error2", (req, res) => {
+    let templateVars = {
+      question: 'Is the site broken?',
+      option1: 'Nope.',
+      option2: 'No way.',
+      option3: 'Maybe?!',
+    }
+    res.render("create", templateVars);
+  });
+
+  router.get("/error3", (req, res) => {
+    let templateVars = {
+      question: 'What should we eat for supper?',
+      option1: 'Porridge',
+      option2: 'Squash',
+      option3: 'Cruciferous veggies',
+    }
+    res.render("create", templateVars);
   });
 
   router.get(/.*/, (req, res) => {
