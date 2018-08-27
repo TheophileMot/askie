@@ -16,7 +16,7 @@ $(document).ready(function() {
     if (i <= MAX_INPUTS - 1
         && i === $('#option-container').children().length
         && $(`#option${i}`).val()) {
-      $(`<div><input id="option${i + 1}" class="text_option" type="text" name="option${i + 1}" placeholder="enter next option"></div>`)
+      $(`<div><input id="option${i + 1}" class="text_option" type="text" name="option${i + 1}" placeholder="next option"></div>`)
       .appendTo('#option-container')
       .keyup(() => addOptionHandler(i + 1))
       .keyup(() => delOptionHandler(i + 1))

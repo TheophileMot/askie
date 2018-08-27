@@ -23,11 +23,11 @@ module.exports = (knex) => {
     if (numVotes == 0) {
       return 'No votes yet! Remember to tell your friends to weigh in on this pressing matter.';
     } else if (numVotes == 1) {
-      return '... based on a single vote.';
+      return 'based on a single vote.';
     } else if (numVotes <= 20) {
-      return `... based on ${numVotes} votes.`;
+      return `based on ${numVotes} votes.`;
     } else {
-      return `... based on ${numVotes} votes. This is a hot issue!`;
+      return `based on ${numVotes} votes. This is a hot issue!`;
     }
   }
 

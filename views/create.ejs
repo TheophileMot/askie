@@ -6,7 +6,7 @@
     <% include ./partials/_header %>
   </head>
   <body>
-    <form action="create" method="post">
+    <form id="create-poll" action="create" method="post">
       <h4>So, you'd like to make an informed decision? </h4>
       <br>
       <p><input id="question" type="text" name="question" placeholder="Who's the fluffiest cat?" style="width:500px; font-size:23px"></p>
@@ -21,6 +21,8 @@
     </form>
     
     <% include ./partials/_footer %>
+    <script type="text/javascript" src="/scripts/validate.js"></script>
+    
       <!-- <script type="text/javascript" src="/scripts/create.js"> -->
       <!-- TODO: do not forget to add the script above again -->
   </body>
