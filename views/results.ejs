@@ -14,14 +14,20 @@
     </div>
   </nav>
 
+<<<<<<< HEAD
   <div class="results-bar">
     <h1>...and the winner is:</h1>
 
+=======
+  <div style="text-align: center; margin: 20%">
+    <h1 class="heading" style="margin: 10%">Vote Results</h1>
+      
+    <h2><%= question %></h2>
+>>>>>>> results-magic
     <div class="poll_results">
       <p id="vote-message"><%= voteMessage %></p>
-      <div class="row">
+      <div id="results-container" class="row">
         <% for (let i in options) { %>
-
           <div class="col-sm-12">
             <div class="progress-outer">
               <div class="progress">

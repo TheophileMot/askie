@@ -54,8 +54,11 @@
   100% { font-size:120% }
 }
 @keyframes glowing {
-  0% { background-color: #ac4; }
-  50% { background-color: #ac4; }
-  100% { background-color: #8a2; }
+  0% { background-color: #9b4;
+       color: #fff; }
+  50% { background-color: #9b4;
+        color: #fff; }
+  100% { background-color: #792;
+         color: #eef; }
 }
 

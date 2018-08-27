@@ -9,6 +9,10 @@
 
 html {
   font-family: 'Noto Serif', serif;
+<<<<<<< HEAD
+=======
+  line-height: 1.15;
+>>>>>>> results-magic
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
@@ -17,6 +21,7 @@ html {
 @-ms-viewport {
   width: device-width; }
 
+<<<<<<< HEAD
 #nav-bar {
   margin: 0;
   background-color: #3893C7;
@@ -47,6 +52,11 @@ input[type=email] {
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
   color: #ffffff;
+=======
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+  color: #fff;
+>>>>>>> results-magic
   background-color: #596575; }
 
 body {
@@ -58,7 +68,11 @@ body {
   color: #212529;
   text-align: center;
   padding-top: 20px;
+<<<<<<< HEAD
   background-color: #FFFFFF; }
+=======
+  background-color: #FCFDEF; }
+>>>>>>> results-magic
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
@@ -69,7 +83,11 @@ hr {
   overflow: visible; }
 
 h1, h2, h3, h4, h5, h6 {
+<<<<<<< HEAD
   margin-top: 100px;
+=======
+  margin-top: 0;
+>>>>>>> results-magic
   margin-bottom: 0.5rem; }
 
 p {
@@ -146,7 +164,11 @@ sup {
   border-color: red; }
 
 a {
+<<<<<<< HEAD
   color: #3893C7;
+=======
+  color: #5A2749;
+>>>>>>> results-magic
   text-decoration: none;
   padding-top: 20px;
   text-shadow: blue;
@@ -216,6 +238,7 @@ label {
   margin-bottom: 0.5rem; }
 
 .button {
+<<<<<<< HEAD
   color: white;
   background-color: #3893C7;
   border-radius: 10px; }
@@ -241,6 +264,19 @@ label {
   .button .btn3d.btn-primary:active, .button .btn3d.btn-primary.active {
     box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
     background-color: #4274D7; }
+=======
+  color: #E0E3E5;
+  background-color: #754949;
+  border-radius: 10px; }
+
+button:hover {
+  color: #EFF1F2;
+  background-color: #8E5858; }
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color; }
+>>>>>>> results-magic
 
 input,
 button,
@@ -363,8 +399,12 @@ h4, .h4 {
   font-size: 1.5rem; }
 
 h5, .h5 {
+<<<<<<< HEAD
   font-size: 1.25rem;
   margin-top: 0px; }
+=======
+  font-size: 1.25rem; }
+>>>>>>> results-magic
 
 h6, .h6 {
   font-size: 1rem; }
@@ -379,10 +419,13 @@ h6, .h6 {
 .checked {
   color: orange; }
 
+<<<<<<< HEAD
 .results-bar {
   text-align: center;
   margin: 0 25%; }
 
+=======
+>>>>>>> results-magic
 /* Three column layout */
 .side {
   float: left;
@@ -1167,7 +1210,11 @@ pre code {
 
 .logo {
   font: 100% Helvetica, sans-serif;
+<<<<<<< HEAD
   color: #333;
   margin-top: 40px; }
+=======
+  color: #333; }
+>>>>>>> results-magic
 
 /*# sourceMappingURL=output.css.map */
