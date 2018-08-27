@@ -3,12 +3,11 @@
 <html lang="en">
   <head>
     <title>Create your poll</title>
+    <% include ./partials/_header %>
 
-      <% include ./partials/_header %>
-
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-      <link rel="stylesheet" href="/resources/demos/style.css">
-      <style>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
       .option { margin: 0.3em; margin-left: 30%; padding: 0.2em; margin-right: 30%; width: 40%; }
       .option p { margin: 4% 4% 4% 4%; padding: 0.1em; font-size: 1.2em; height: 2em; position: center; width: 92%; }
       .option p span { float: right; font-size: 0.7em; padding: 0.4em; color: #BBB; }
@@ -21,12 +20,12 @@
     <form class="poll" action="/poll/<%=url%>" method="post">
       <input type="hidden" value="<%=poll_id%>" name="poll_id">
       <input type="hidden" value="<%=url%>" name="url">
-      <h4 name="question">
-        <%= question %>
-      </h4>
-      <h4>Rearrange the items below in order of your preference</h4>
-      <p>(drag and drop them)</p>
+
+      <h4>The question in question: <%= question %></h4>
+      <br>
+      <h5>Rearrange the choices below in your order of preference:</h5>
       <% for (let i in options) { %>
+        <br>
         <div id="place<%=i%>" class="option" ondrop="drop(event)" ondragover="allowDrop(event)" style="color: #797979;">
           Place <%= Number(i) + 1 %> (drop here)
           <p id="drag<%=i%>" optionId="<%=options[i].id%>" class="option-element ui-state-default option" draggable="true" ondragstart="drag(event)">
@@ -35,7 +34,7 @@
         </div>
         <% } %>
         <div style="text-align: center; margin: 5%;">
-        <input class="button" type="submit" value="make your choice!">
+        <input class="button btn btn-primary btn-lg btn3d" type="submit" value="make your choice!">
       </div>
     </form>
         <% include ./partials/_footer %>

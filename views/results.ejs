@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
   <title>Poll Results</title>
-
   <% include ./partials/_header %>
-
 </head>
-
 <body>
-    <h2><%= question %></h2>
+    <div style="text-align: center; margin: 15%">
+    <h2>The question: <%= question %></h2>
     <h1 class="heading">...and the winner is:</h1>
-
-    <div class="poll_results">
+    <div class="poll_results"></div>
       <div id="results-container" class="row">
         <% for (let i in options) { %>
           <div class="col-sm-12">
@@ -30,12 +27,9 @@
   </div>
 </div>
   <!-- <div style="text-align: center"> -->
-    <br>
     <input id="create-button" class="button btn btn-primary btn-lg btn3d" value="Create a new askie?">
   </div>
   <% include ./partials/_footer%>
   <script type="text/javascript" src="/scripts/refresh-results.js"></script>
-
   </body>
-
 </html>

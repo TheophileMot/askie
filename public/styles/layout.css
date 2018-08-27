@@ -366,6 +366,7 @@ label {
   color: white;
   background-color: #3893C7;
   border-radius: 10px;
+  cursor: default;
 }
 
 .button .btn3d {
@@ -410,6 +411,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  cursor: default;
 }
 
 button,
@@ -417,11 +419,13 @@ input {
   overflow: visible;
   border-color: silver;
   background-color: #FCFCFD;
+  cursor: default;
 }
 
 button,
 select {
   text-transform: none;
+  cursor: default;
 }
 
 button,
