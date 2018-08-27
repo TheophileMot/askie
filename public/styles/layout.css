@@ -260,16 +260,34 @@ sup {
 
 .option {
   border: 2px;
-  width: 300px;
+  width: 40%;
   background: #C5EFFF;
   border-radius: 10px;
-  margin: auto;
+  margin: 0.3em;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 0.2em;
   cursor: default;
   user-select: none;
   -khtml-user-select: none;
   -o-user-select: none;
   -moz-user-select: -moz-none;
   -webkit-user-select: none;
+}
+
+.option p {
+  margin: 4% 4% 4% 4%;
+  padding: 0.1em;
+  font-size: 1.2em;
+  height: 2em;
+  position: center;
+  width: 92%;
+}
+.option p span {
+  float: right;
+  font-size: 0.7em;
+  padding: 0.4em;
+  color: #BBB;
 }
 
 .poll {
