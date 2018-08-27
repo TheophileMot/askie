@@ -22,6 +22,12 @@ html {
   width: device-width;
 }
 
+#create-validation-error {
+  background-color: #FCC;
+  color: #822;
+  visibility: hidden;
+}
+
 #nav-bar {
   margin: 0;
   background-color: #3893C7;
@@ -33,6 +39,7 @@ html {
   position: fixed;
   right: 0;
   padding: 0 2em 0 2em;
+  z-index: 1;
 
   .header {
     float: left;
@@ -416,7 +423,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-  cursor: default;
+  // cursor: default;
 }
 
 button,
@@ -424,7 +431,7 @@ input {
   overflow: visible;
   border-color: silver;
   background-color: #FCFCFD;
-  cursor: default;
+  // cursor: default;
 }
 
 button,

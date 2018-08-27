@@ -6,21 +6,25 @@
     <% include ./partials/_header %>
   </head>
   <body>
-    <form action="create" method="post">
+    <div></div>
+    <form id="create-poll" action="create" method="post">
       <h4>So, you'd like to make an informed decision? </h4>
       <br>
-      <p><input id="question" type="text" name="question" placeholder="Who's the fluffiest cat?" style="width:500px; font-size:23px"></p>
+      <div id="create-validation-error">Please enter a question and at least two options!</div>
+      <p><input id="question" type="text" name="question" placeholder="<%= question %>" style="width:500px; font-size:23px"></p>
       <br>
       <div id="option-container">
-        <p><input id="option1" class="text_option" type="text" name="option1" placeholder="Meowy"></p>
-        <p><input id="option2" class="text_option" type="text" name="option2" placeholder="Fluffers"></p>
-        <p><input id="option3" class="text_option" type="text" name="option3" placeholder="Miss Whiskers"></p>
+        <p><input id="option1" class="text-option" type="text" name="option1" placeholder="<%= option1 %>"></p>
+        <p><input id="option2" class="text-option" type="text" name="option2" placeholder="<%= option2 %>"></p>
+        <p><input id="option3" class="text-option" type="text" name="option3" placeholder="<%= option3 %>"></p>
       </div>
       <br>
       <input class="button btn btn-primary btn-lg btn3d" type="submit" name="done_button" value="Create your askie!">
     </form>
     
     <% include ./partials/_footer %>
+    <script type="text/javascript" src="/scripts/validate.js"></script>
+    
       <!-- <script type="text/javascript" src="/scripts/create.js"> -->
       <!-- TODO: do not forget to add the script above again -->
   </body>

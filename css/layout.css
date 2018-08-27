@@ -17,6 +17,11 @@ html {
 @-ms-viewport {
   width: device-width; }
 
+#create-validation-error {
+  background-color: #FCC;
+  color: #822;
+  visibility: hidden; }
+
 #nav-bar {
   margin: 0;
   background-color: #3893C7;
@@ -27,7 +32,8 @@ html {
   left: 0;
   position: fixed;
   right: 0;
-  padding: 0 2em 0 2em; }
+  padding: 0 2em 0 2em;
+  z-index: 1; }
   #nav-bar .header {
     float: left;
     text-align: center;
@@ -299,7 +305,8 @@ label {
 .button {
   color: white;
   background-color: #3893C7;
-  border-radius: 10px; }
+  border-radius: 10px;
+  cursor: default; }
   .button .btn3d {
     position: relative;
     top: -6px;
@@ -342,7 +349,8 @@ input {
 
 button,
 select {
-  text-transform: none; }
+  text-transform: none;
+  cursor: default; }
 
 button,
 html [type=button],
