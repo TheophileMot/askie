@@ -35,5 +35,8 @@ $(document).ready(() => {
     window.location='/create';
   });
 
+  $('.composer').click(function() {
+    window.location='/create';
+  });
 
 });
