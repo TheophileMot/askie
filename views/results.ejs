@@ -14,12 +14,11 @@
     </div>
   </nav>
 
-  <div style="text-align: center; margin: 20%">
-    <h1 class="heading" style="margin: 10%">Vote Results</h1>
-      
+  <div style="text-align: center;">
     <h2><%= question %></h2>
+    <h1 class="heading">...and the winner is:</h1>
+
     <div class="poll_results">
-      <p id="vote-message"><%= voteMessage %></p>
       <div id="results-container" class="row">
         <% for (let i in options) { %>
           <div class="col-sm-12">
@@ -33,6 +32,7 @@
           </div>
         <% } %>
       </div>
+      <p id="vote-message"><%= voteMessage %></p>
     </div>
   </div>
 </div>
