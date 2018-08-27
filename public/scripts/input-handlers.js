@@ -16,14 +16,14 @@ $(document).ready(function() {
     if (i <= MAX_INPUTS - 1
         && i === $('#option-container').children().length
         && $(`#option${i}`).val()) {
-      $(`<div><input id="option${i + 1}" class="text-option" type="text" name="option${i + 1}" placeholder="next option"></div>`)
+      $(`<p><input id="option${i + 1}" class="text-option" type="text" name="option${i + 1}" placeholder="next option"></p>`)
       .appendTo('#option-container')
       .keyup(() => addOptionHandler(i + 1))
       .keyup(() => delOptionHandler(i + 1))
       .hide().fadeIn(200);
     }
   }
-  
+
   // add handlers to third input on page (not to first two, since first three always stay on the page)
   $('#option3').keyup(() => addOptionHandler(3));
   $('#option3').keyup(() => delOptionHandler(3));
