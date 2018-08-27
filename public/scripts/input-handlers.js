@@ -41,7 +41,6 @@ $(document).ready(function() {
 
   // if text is added in last input, create a new input, up to MAX_INPUTS
   function addEmailHandler(i) {
-    console.log("this is indexed", i)
     if (i <= MAX_EMAILS - 1
         && i === $('.friends_email_list').children().length
         && $(`#email${i}`).val()) {
