@@ -6,13 +6,12 @@
 
       <% include ./partials/_header %>
 
-
       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
       <link rel="stylesheet" href="/resources/demos/style.css">
       <style>
-      .option { list-style-type: none; margin: 10px; margin-left: 20%; margin-right: 20%; width: 50%; }
-      .option li { margin: 10px 3px 3px 3px; padding: 0.4em; font-size: 1.2em; height: 2em; width: 100%; }
-
+      .option { margin: 0.3em; margin-left: 30%; padding: 0.2em; margin-right: 30%; width: 40%; }
+      .option p { margin: 4% 4% 4% 4%; padding: 0.1em; font-size: 1.2em; height: 2em; position: center; width: 92%; }
+      .option p span { float: right; font-size: 0.7em; padding: 0.4em; color: #BBB; }
       </style>
       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -34,27 +33,25 @@
       <form class="poll" action="/poll/<%=url%>" method="post">
         <input type="hidden" value="<%=poll_id%>" name="poll_id">
         <input type="hidden" value="<%=url%>" name="url">
-        <h4>Re-arrange the items below in order of your preference</h4>
-        <p>(drag and drop them)</p>
         <h4 name="question">
-          Question:
+          So
           <%= question %>
         </h4>
-        <h4>Options:</h4>
-
+        <h4>Re-arrange the items below in order of your preference</h4>
+        <p>(drag and drop them)</p>
         <% for (let i in options) { %>
-          <ul id="place<%=i%>" class="option" ondrop="drop(event)" ondragover="allowDrop(event)">
-            Place <%= Number(i) + 1 %>
-            <li id="drag<%=i%>" optionId="<%=options[i].id%>" class="option-element ui-state-default option" draggable="true" ondragstart="drag(event)">
-              <%= options[i].name %> <span style="float: right; font-size: 0.7em; color: #BBB;">Drag me</span>
-            </li>
-          </ul>
+        <div id="place<%=i%>" class="option" ondrop="drop(event)" ondragover="allowDrop(event)" style="color: #797979;">
+          Place <%= Number(i) + 1 %> (drop here)
+
+            <p id="drag<%=i%>" optionId="<%=options[i].id%>" class="option-element ui-state-default option" draggable="true" ondragstart="drag(event)">
+              <%= options[i].name %> <span>Drag me</span>
+            </p>
+          </div>
         <% } %>
         <div style="text-align: center; margin: 5%;">
         <input class="button" type="submit" value ="make your choice!">
       </div>
     </form>
-
         <% include ./partials/_footer %>
       <!-- <script type="text/javascript" src="/scripts/create.js"> -->
       <!-- TODO: do not forget to add the script above again -->
