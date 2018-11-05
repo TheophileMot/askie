@@ -7,7 +7,7 @@ install with `npm install`.
 # screenshots
 
 setting up a poll:
-https://github.com/TheophileMot/askie/blob/master/Screenshot_2018-11-05%20Create%20your%20poll.png
+![a poll with three choices for dinner](https://github.com/TheophileMot/askie/blob/master/Screenshot_2018-11-05%20Create%20your%20poll.png)
 
 results:
-https://github.com/TheophileMot/askie/blob/master/Screenshot_2018-11-05%20Poll%20Results.png
+![let's eat healthy food for dinner](https://github.com/TheophileMot/askie/blob/master/Screenshot_2018-11-05%20Poll%20Results.png)
